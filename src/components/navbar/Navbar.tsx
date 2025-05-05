@@ -1,28 +1,46 @@
 
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Menu, X, User, Search } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Menu, X, User, Search, LogOut } from 'lucide-react';
 import ButtonCustom from '../ui/button-custom';
+import { useAuth } from '@/contexts/AuthContext';
 
 interface NavLink {
   name: string;
   path: string;
+  requiresAuth?: boolean;
 }
-
-const navLinks: NavLink[] = [
-  { name: 'Home', path: '/' },
-  { name: 'Courses', path: '/courses' },
-  { name: 'Dashboard', path: '/dashboard' },
-  { name: 'About', path: '/about' },
-  { name: 'Contact', path: '/contact' },
-];
 
 const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // This would come from auth context in a real app
+  const { user, profile, signOut } = useAuth();
+  const isLoggedIn = !!user;
+  const navigate = useNavigate();
+
+  const navLinks: NavLink[] = [
+    { name: 'Home', path: '/' },
+    { name: 'Courses', path: '/courses', requiresAuth: true },
+    { name: 'Dashboard', path: '/dashboard', requiresAuth: true },
+    { name: 'About', path: '/about' },
+    { name: 'Contact', path: '/contact' },
+  ];
+
+  const filteredNavLinks = navLinks.filter(link => 
+    !link.requiresAuth || (link.requiresAuth && isLoggedIn)
+  );
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleSignOut = async () => {
+    await signOut();
+    setIsMobileMenuOpen(false);
+  };
+
+  const handleAuthClick = () => {
+    navigate('/auth');
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -38,7 +56,7 @@ const Navbar: React.FC = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <div className="hidden md:flex items-center space-x-4">
-              {navLinks.map((link) => (
+              {filteredNavLinks.map((link) => (
                 <Link
                   key={link.name}
                   to={link.path}
@@ -55,15 +73,24 @@ const Navbar: React.FC = () => {
               </button>
               
               {isLoggedIn ? (
-                <Link to="/profile" className="flex items-center text-gray-600 hover:text-pioneer-deep-blue">
-                  <div className="h-8 w-8 rounded-full bg-pioneer-deep-blue text-white flex items-center justify-center">
-                    <User className="h-5 w-5" />
-                  </div>
-                </Link>
+                <div className="flex items-center space-x-3">
+                  <Link to="/profile" className="flex items-center text-gray-600 hover:text-pioneer-deep-blue">
+                    <div className="h-8 w-8 rounded-full bg-pioneer-deep-blue text-white flex items-center justify-center">
+                      <User className="h-5 w-5" />
+                    </div>
+                  </Link>
+                  <button 
+                    onClick={handleSignOut}
+                    className="text-gray-600 hover:text-pioneer-deep-blue"
+                    title="Sign Out"
+                  >
+                    <LogOut className="h-5 w-5" />
+                  </button>
+                </div>
               ) : (
                 <div className="flex items-center space-x-3">
-                  <ButtonCustom variant="outline" size="sm">Sign In</ButtonCustom>
-                  <ButtonCustom size="sm">Sign Up</ButtonCustom>
+                  <ButtonCustom variant="outline" size="sm" onClick={handleAuthClick}>Sign In</ButtonCustom>
+                  <ButtonCustom size="sm" onClick={handleAuthClick}>Sign Up</ButtonCustom>
                 </div>
               )}
             </div>
@@ -89,7 +116,7 @@ const Navbar: React.FC = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-200">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navLinks.map((link) => (
+            {filteredNavLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
@@ -101,10 +128,19 @@ const Navbar: React.FC = () => {
             ))}
             
             <div className="pt-4 flex flex-col space-y-2">
-              {!isLoggedIn && (
+              {isLoggedIn ? (
+                <ButtonCustom 
+                  variant="outline" 
+                  fullWidth 
+                  onClick={handleSignOut}
+                  leftIcon={<LogOut className="h-4 w-4" />}
+                >
+                  Sign Out
+                </ButtonCustom>
+              ) : (
                 <>
-                  <ButtonCustom variant="outline" fullWidth>Sign In</ButtonCustom>
-                  <ButtonCustom fullWidth>Sign Up</ButtonCustom>
+                  <ButtonCustom variant="outline" fullWidth onClick={handleAuthClick}>Sign In</ButtonCustom>
+                  <ButtonCustom fullWidth onClick={handleAuthClick}>Sign Up</ButtonCustom>
                 </>
               )}
             </div>
