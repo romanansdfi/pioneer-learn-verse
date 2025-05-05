@@ -11,6 +11,11 @@ interface UserProfile {
   email: string;
   class?: number;
   role: "student" | "parent" | "teacher";
+  avatar_url?: string;
+  bio?: string;
+  created_at?: string;
+  updated_at?: string;
+  username?: string;
 }
 
 interface AuthContextType {

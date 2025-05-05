@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
@@ -95,7 +94,6 @@ const Auth: React.FC = () => {
     }
 
     toast({
-      title: "Success!",
       description: "Your account has been created. Please sign in."
     });
     
@@ -117,7 +115,6 @@ const Auth: React.FC = () => {
     }
 
     toast({
-      title: "Welcome back!",
       description: "You are now signed in."
     });
     

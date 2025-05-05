@@ -18,7 +18,6 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
 
   if (!user) {
     toast({
-      title: "Access Restricted",
       description: "Please log in to continue.",
       variant: "destructive",
     });
