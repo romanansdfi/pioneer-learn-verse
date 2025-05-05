@@ -93,9 +93,7 @@ const Auth: React.FC = () => {
       return;
     }
 
-    toast({
-      description: "Your account has been created. Please sign in."
-    });
+    toast("Your account has been created. Please sign in.");
     
     setActiveTab("signIn");
     signInForm.setValue("email", values.email);
@@ -114,9 +112,7 @@ const Auth: React.FC = () => {
       return;
     }
 
-    toast({
-      description: "You are now signed in."
-    });
+    toast("You are now signed in.");
     
     navigate("/dashboard");
   };

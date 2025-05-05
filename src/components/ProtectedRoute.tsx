@@ -17,10 +17,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
   }
 
   if (!user) {
-    toast({
-      description: "Please log in to continue.",
-      variant: "destructive",
-    });
+    toast("Please log in to continue.");
     return <Navigate to="/auth" replace />;
   }
 
