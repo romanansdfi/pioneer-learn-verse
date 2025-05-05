@@ -5,6 +5,7 @@ import HeroSection from '../components/landing/HeroSection';
 import FeaturedCourses from '../components/landing/FeaturedCourses';
 import Testimonials from '../components/landing/Testimonials';
 import CallToAction from '../components/landing/CallToAction';
+import ExploreSchoolButton from '../components/school/ExploreSchoolButton';
 
 const Index: React.FC = () => {
   return (
@@ -12,6 +13,12 @@ const Index: React.FC = () => {
       <Navbar />
       <main className="flex-grow">
         <HeroSection />
+        
+        {/* Explore School Info Button Section */}
+        <div className="bg-white py-10 px-4 flex justify-center">
+          <ExploreSchoolButton />
+        </div>
+        
         <FeaturedCourses />
         <Testimonials />
         <CallToAction />
