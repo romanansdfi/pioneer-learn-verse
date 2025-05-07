@@ -11,6 +11,7 @@ import Dashboard from "./pages/Dashboard";
 import CourseView from "./pages/CourseView";
 import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
+import Profile from "./pages/Profile";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,16 @@ const App = () => (
             <Route path="/course-view" element={
               <ProtectedRoute>
                 <CourseView />
+              </ProtectedRoute>
+            } />
+            <Route path="/course-view/:id" element={
+              <ProtectedRoute>
+                <CourseView />
+              </ProtectedRoute>
+            } />
+            <Route path="/profile" element={
+              <ProtectedRoute>
+                <Profile />
               </ProtectedRoute>
             } />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

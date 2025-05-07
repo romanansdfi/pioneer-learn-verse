@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '../components/navbar/Navbar';
 import HeroSection from '../components/landing/HeroSection';
@@ -23,6 +22,7 @@ const Index: React.FC = () => {
         <Testimonials />
         <CallToAction />
       </main>
+      
       <footer className="bg-pioneer-deep-blue text-white py-8 px-4 md:px-8 lg:px-16">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
