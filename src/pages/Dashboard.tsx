@@ -1,11 +1,10 @@
-
 import React, { useState, useEffect } from "react";
 import Navbar from "@/components/navbar/Navbar";
 import { useAuth } from "@/contexts/AuthContext";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import { BookOpen, FileText, Users, Bell, Chart } from "lucide-react";
+import { BookOpen, FileText, Users, Bell, BarChart } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import NotificationPanel, { Notification } from "@/components/notifications/NotificationPanel";
 import QuickLinks from "@/components/dashboard/QuickLinks";
@@ -297,7 +296,7 @@ const Dashboard: React.FC = () => {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Chart className="h-5 w-5" />
+                    <BarChart className="h-5 w-5" />
                     Class Performance
                   </CardTitle>
                   <CardDescription>Average scores by class</CardDescription>

@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { Chart, Link as LinkIcon, Bell } from "lucide-react";
+import { BarChart, Link as LinkIcon, Bell } from "lucide-react";
 
 interface QuickLinkProps {
   title: string;
@@ -41,7 +41,7 @@ const QuickLinks: React.FC<QuickLinksProps> = ({ role }) => {
     if (role === "student") {
       return [
         ...commonLinks,
-        { title: "Assignments", href: "/assignments", icon: <Chart className="h-6 w-6" />, color: "bg-blue-50" },
+        { title: "Assignments", href: "/assignments", icon: <BarChart className="h-6 w-6" />, color: "bg-blue-50" },
         { title: "Library", href: "/library", icon: <Bell className="h-6 w-6" />, color: "bg-purple-50" },
       ];
     }
@@ -49,7 +49,7 @@ const QuickLinks: React.FC<QuickLinksProps> = ({ role }) => {
     if (role === "parent") {
       return [
         ...commonLinks,
-        { title: "Fees", href: "/fees", icon: <Chart className="h-6 w-6" />, color: "bg-pink-50" },
+        { title: "Fees", href: "/fees", icon: <BarChart className="h-6 w-6" />, color: "bg-pink-50" },
         { title: "Attendance", href: "/attendance", icon: <Bell className="h-6 w-6" />, color: "bg-orange-50" },
       ];
     }
@@ -57,7 +57,7 @@ const QuickLinks: React.FC<QuickLinksProps> = ({ role }) => {
     if (role === "teacher") {
       return [
         ...commonLinks,
-        { title: "Classes", href: "/classes", icon: <Chart className="h-6 w-6" />, color: "bg-blue-50" },
+        { title: "Classes", href: "/classes", icon: <BarChart className="h-6 w-6" />, color: "bg-blue-50" },
         { title: "Reports", href: "/reports", icon: <Bell className="h-6 w-6" />, color: "bg-purple-50" },
       ];
     }
