@@ -80,7 +80,11 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
-              <span className="text-pioneer-deep-blue text-xl font-bold">Pioneer<span className="text-pioneer-light-blue">Learn</span></span>
+              <img 
+                src="/lovable-uploads/f436f794-4d90-41f3-99aa-aa0b42ebe828.png" 
+                alt="Pioneer Academy Logo" 
+                className="h-10 w-auto"
+              />
             </Link>
           </div>
 
