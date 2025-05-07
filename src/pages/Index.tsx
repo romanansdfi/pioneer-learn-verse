@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Navbar from '../components/navbar/Navbar';
 import HeroSection from '../components/landing/HeroSection';
@@ -5,6 +6,7 @@ import FeaturedCourses from '../components/landing/FeaturedCourses';
 import Testimonials from '../components/landing/Testimonials';
 import CallToAction from '../components/landing/CallToAction';
 import ExploreSchoolButton from '../components/school/ExploreSchoolButton';
+import SchoolInfo from '../components/school/SchoolInfo';
 
 const Index: React.FC = () => {
   return (
@@ -19,6 +21,11 @@ const Index: React.FC = () => {
         </div>
         
         <FeaturedCourses />
+        
+        <div className="bg-slate-50">
+          <SchoolInfo />
+        </div>
+        
         <Testimonials />
         <CallToAction />
       </main>
