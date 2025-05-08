@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Menu, X, User, Search, LogOut } from 'lucide-react';
@@ -79,11 +78,7 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
-              <img 
-                src="/lovable-uploads/f436f794-4d90-41f3-99aa-aa0b42ebe828.png" 
-                alt="Pioneer Academy Logo" 
-                className="h-10 w-auto"
-              />
+              <span className="text-xl font-bold text-pioneer-deep-blue">Pioneer Learn</span>
             </Link>
           </div>
 
