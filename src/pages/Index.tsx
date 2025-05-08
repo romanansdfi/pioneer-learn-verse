@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '../components/navbar/Navbar';
 import HeroSection from '../components/landing/HeroSection';
@@ -14,13 +13,9 @@ const Index: React.FC = () => {
       <main className="flex-grow">
         <HeroSection />
         
-        {/* Explore School Info Button Section - Made more prominent */}
-        <div className="bg-gradient-to-r from-pioneer-green/10 to-pioneer-light-blue/10 py-12 px-4 flex justify-center items-center">
-          <div className="text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-pioneer-deep-blue mb-6">Discover Pioneer Academy</h2>
-            <p className="text-gray-700 max-w-2xl mx-auto mb-8">Learn about our comprehensive education system, extracurricular activities, and everything that makes Pioneer Academy special.</p>
-            <ExploreSchoolButton />
-          </div>
+        {/* Explore School Info Button Section */}
+        <div className="bg-white py-10 px-4 flex justify-center">
+          <ExploreSchoolButton />
         </div>
         
         <FeaturedCourses />

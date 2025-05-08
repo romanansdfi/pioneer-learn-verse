@@ -1,9 +1,9 @@
+
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Menu, X, User, Search, LogOut } from 'lucide-react';
 import ButtonCustom from '../ui/button-custom';
 import { useAuth } from '@/contexts/AuthContext';
-import NotificationPanel, { Notification } from "@/components/notifications/NotificationPanel";
 
 interface NavLink {
   name: string;
@@ -17,38 +17,9 @@ const Navbar: React.FC = () => {
   const isLoggedIn = !!user;
   const navigate = useNavigate();
 
-  // Sample notifications
-  const [notifications, setNotifications] = useState<Notification[]>([
-    {
-      id: "1",
-      title: "New Assignment",
-      message: "Math homework due tomorrow",
-      date: new Date(),
-      read: false,
-      type: "info"
-    },
-    {
-      id: "2",
-      title: "Upcoming Test",
-      message: "Science test scheduled for next Friday",
-      date: new Date(),
-      read: false,
-      type: "warning"
-    }
-  ]);
-
-  const handleMarkAsRead = (id: string) => {
-    setNotifications(notifications.map(n => 
-      n.id === id ? {...n, read: true} : n
-    ));
-  };
-
-  const handleMarkAllAsRead = () => {
-    setNotifications(notifications.map(n => ({...n, read: true})));
-  };
-
   const navLinks: NavLink[] = [
     { name: 'Home', path: '/' },
+    { name: 'Courses', path: '/courses', requiresAuth: true },
     { name: 'Dashboard', path: '/dashboard', requiresAuth: true },
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
@@ -78,7 +49,7 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
-              <span className="text-xl font-bold text-pioneer-deep-blue">Pioneer Learn</span>
+              <span className="text-pioneer-deep-blue text-xl font-bold">Pioneer<span className="text-pioneer-light-blue">Learn</span></span>
             </Link>
           </div>
 
@@ -100,14 +71,6 @@ const Navbar: React.FC = () => {
               <button className="text-gray-600 hover:text-pioneer-deep-blue">
                 <Search className="h-5 w-5" />
               </button>
-              
-              {isLoggedIn && (
-                <NotificationPanel 
-                  notifications={notifications}
-                  onMarkAsRead={handleMarkAsRead}
-                  onMarkAllAsRead={handleMarkAllAsRead}
-                />
-              )}
               
               {isLoggedIn ? (
                 <div className="flex items-center space-x-3">

@@ -27,18 +27,15 @@ const ExploreSchoolButton: React.FC = () => {
 
   return (
     <>
-      <div className="relative">
-        <ButtonCustom 
-          variant="accent" 
-          size="lg" 
-          className="shadow-lg animate-bounce-slow relative z-10"
-          leftIcon={<BookOpen className="h-5 w-5" />}
-          onClick={handleOpenModal}
-        >
-          Explore School Info
-        </ButtonCustom>
-        <div className="absolute -bottom-2 -right-2 -left-2 -top-2 bg-pioneer-light-blue/20 rounded-lg animate-pulse"></div>
-      </div>
+      <ButtonCustom 
+        variant="accent" 
+        size="lg" 
+        className="shadow-lg animate-bounce-slow"
+        leftIcon={<BookOpen />}
+        onClick={handleOpenModal}
+      >
+        Explore School Info
+      </ButtonCustom>
       
       <SchoolInfoModal 
         open={isModalOpen} 
