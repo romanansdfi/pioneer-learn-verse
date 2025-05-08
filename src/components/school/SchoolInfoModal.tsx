@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import SchoolInfo from "./SchoolInfo";
+import ComprehensiveSchoolInfo from "./ComprehensiveSchoolInfo";
 
 interface SchoolInfoModalProps {
   open: boolean;
@@ -15,7 +15,7 @@ const SchoolInfoModal: React.FC<SchoolInfoModalProps> = ({ open, onClose }) => {
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-center">School Information</DialogTitle>
         </DialogHeader>
-        <SchoolInfo />
+        <ComprehensiveSchoolInfo />
       </DialogContent>
     </Dialog>
   );

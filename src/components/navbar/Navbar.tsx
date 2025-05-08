@@ -50,7 +50,6 @@ const Navbar: React.FC = () => {
 
   const navLinks: NavLink[] = [
     { name: 'Home', path: '/' },
-    // "Courses" button removed as requested
     { name: 'Dashboard', path: '/dashboard', requiresAuth: true },
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
