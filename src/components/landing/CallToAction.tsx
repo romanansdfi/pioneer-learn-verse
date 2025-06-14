@@ -41,10 +41,7 @@ const CallToAction: React.FC = () => {
             </h2>
 
             {/* Description */}
-            <p className="text-lg text-white/90 mb-8 leading-relaxed max-w-xl">
-              Transform your career with our expert-led courses. Get lifetime access, 
-              personalized mentorship, and industry-recognized certificates.
-            </p>
+            <p className="text-lg text-white/90 mb-8 leading-relaxed max-w-xl">Transform your career with our expert-led teachers. Get lifetime learning experience</p>
 
             {/* Features List */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
@@ -52,13 +49,13 @@ const CallToAction: React.FC = () => {
                 <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3">
                   <BookOpen className="w-4 h-4 text-white" />
                 </div>
-                <span>200+ Expert Courses</span>
+                <span>Effective Courses</span>
               </div>
               <div className="flex items-center text-white/90">
                 <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-3">
                   <Users className="w-4 h-4 text-white" />
                 </div>
-                <span>Live Mentorship</span>
+                <span>Expert Teachers</span>
               </div>
               <div className="flex items-center text-white/90">
                 <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center mr-3">
@@ -106,8 +103,8 @@ const CallToAction: React.FC = () => {
                 <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-teal-500 rounded-xl flex items-center justify-center mb-4">
                   <Users className="w-6 h-6 text-white" />
                 </div>
-                <div className="text-3xl font-bold text-white mb-2">50K+</div>
-                <div className="text-white/80">Active Students</div>
+                <div className="text-3xl font-bold text-white mb-2">10K+</div>
+                <div className="text-white/80">School graduate std</div>
                 <div className="text-green-300 text-sm mt-2">↗ +12% this month</div>
               </div>
 
@@ -117,7 +114,7 @@ const CallToAction: React.FC = () => {
                   <BookOpen className="w-6 h-6 text-white" />
                 </div>
                 <div className="text-3xl font-bold text-white mb-2">200+</div>
-                <div className="text-white/80">Expert Courses</div>
+                <div className="text-white/80">Effective Courses</div>
                 <div className="text-blue-300 text-sm mt-2">New content weekly</div>
               </div>
 
