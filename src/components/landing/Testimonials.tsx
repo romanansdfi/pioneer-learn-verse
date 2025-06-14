@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Star } from 'lucide-react';
 
@@ -6,6 +7,7 @@ interface Testimonial {
   name: string;
   role: string;
   image?: string;
+  initials?: string;
   rating: number;
   text: string;
 }
@@ -15,6 +17,7 @@ const testimonials: Testimonial[] = [
     id: 1,
     name: "Bhola Yadav",
     role: "Full Scholar at TU",
+    initials: "BY",
     rating: 5,
     text: "PioneerLearn completely transformed my career journey. The interactive learning environment made complex concepts easy to understand and practice simultaneously. It fundamentally changed my way of thinking and opened new possibilities I never imagined before."
   },
@@ -40,7 +43,7 @@ const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({ testimonial }
   return (
     <div className="bg-white p-6 rounded-lg shadow-md">
       <div className="flex items-start mb-4">
-        {testimonial.image && (
+        {testimonial.image ? (
           <div className="h-12 w-12 rounded-full overflow-hidden mr-4">
             <img 
               src={testimonial.image} 
@@ -48,7 +51,11 @@ const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({ testimonial }
               className="h-full w-full object-cover"
             />
           </div>
-        )}
+        ) : testimonial.initials ? (
+          <div className="h-12 w-12 rounded-full bg-pioneer-deep-blue text-white flex items-center justify-center mr-4 font-semibold text-sm">
+            {testimonial.initials}
+          </div>
+        ) : null}
         <div>
           <h4 className="font-semibold text-pioneer-deep-blue">{testimonial.name}</h4>
           <p className="text-sm text-gray-600">{testimonial.role}</p>
