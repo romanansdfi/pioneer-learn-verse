@@ -148,10 +148,22 @@ const SchoolInfo: React.FC = () => {
   }, {
     category: "Activities",
     images: [
-      { name: "Art Class", src: null },
-      { name: "Music Room", src: null },
-      { name: "Dance Performance", src: null },
-      { name: "Drama Club", src: null }
+      {
+        name: "School Group Activity",
+        src: "/lovable-uploads/1c16ef8b-434b-4c49-80be-9f2fb0a3ed69.png"
+      },
+      {
+        name: "Achievement Awards Ceremony",
+        src: "/lovable-uploads/cfa9805a-90ed-4a62-8cbf-28c4bfc18b81.png"
+      },
+      {
+        name: "Student Recognition Event",
+        src: "/lovable-uploads/fb108808-734f-43c1-8fb6-7c5e4085147d.png"
+      },
+      {
+        name: "Award Presentation",
+        src: "/lovable-uploads/fccb4d8f-0a5d-44f9-a3c4-b6b9359045b6.png"
+      }
     ],
     color: "from-green-500 to-teal-500"
   }];
