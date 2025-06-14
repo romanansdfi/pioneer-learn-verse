@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ArrowRight, Star, Users, Award, BookOpen } from 'lucide-react';
 import ButtonCustom from '../ui/button-custom';
@@ -143,14 +144,16 @@ const CallToAction: React.FC = () => {
             <div className="mt-8 bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
               <div className="flex items-start">
                 <div className="w-12 h-12 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                  <span className="text-white font-bold">JD</span>
+                  <span className="text-white font-bold">RS</span>
                 </div>
                 <div>
                   <p className="text-white/90 italic mb-2">
                     "PioneerLearn transformed my career completely. The quality of courses and mentorship is unmatched!"
                   </p>
                   <div className="text-white/70 text-sm">
-                    <span className="font-semibold">John Doe</span> - Software Engineer at Google
+                    <span className="font-semibold">Rambilas Sah</span> - B.Tech std in Banglore
+                    <br />
+                    <span className="text-yellow-300">National level mathematics finalist</span>
                   </div>
                 </div>
               </div>
