@@ -33,7 +33,7 @@ const testimonials: Testimonial[] = [
     id: 3,
     name: "Shristika Chy",
     role: "Civil Engineer",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=60",
+    initials: "SC",
     rating: 4,
     text: "I've tried many school but PioneerLearn offers the best mix of theoretical knowledge and practical exercises. The practical based learning approach helped me build an impressive career."
   }
