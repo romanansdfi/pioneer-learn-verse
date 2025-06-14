@@ -1,18 +1,15 @@
-
 import React from 'react';
 import { ArrowRight, Star, Users, Award, BookOpen } from 'lucide-react';
 import ButtonCustom from '../ui/button-custom';
-
 const CallToAction: React.FC = () => {
-  return (
-    <section className="relative py-20 px-4 md:px-8 lg:px-16 overflow-hidden">
+  return <section className="relative py-20 px-4 md:px-8 lg:px-16 overflow-hidden">
       {/* Background with gradient and pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-pioneer-deep-blue via-pioneer-light-blue to-pioneer-green">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-full h-full" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-          }}></div>
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+        }}></div>
         </div>
       </div>
 
@@ -67,7 +64,7 @@ const CallToAction: React.FC = () => {
                 <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center mr-3">
                   <Award className="w-4 h-4 text-white" />
                 </div>
-                <span>Industry Certificates</span>
+                <span>Valuable learning </span>
               </div>
               <div className="flex items-center text-white/90">
                 <div className="w-8 h-8 bg-pink-500 rounded-full flex items-center justify-center mr-3">
@@ -79,19 +76,11 @@ const CallToAction: React.FC = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <ButtonCustom 
-                size="lg" 
-                className="bg-white text-pioneer-deep-blue hover:bg-white/90 shadow-2xl transform hover:scale-105 transition-all duration-300 font-bold px-8 py-4"
-                rightIcon={<ArrowRight className="w-5 h-5" />}
-              >
+              <ButtonCustom size="lg" className="bg-white text-pioneer-deep-blue hover:bg-white/90 shadow-2xl transform hover:scale-105 transition-all duration-300 font-bold px-8 py-4" rightIcon={<ArrowRight className="w-5 h-5" />}>
                 Get Started Today
               </ButtonCustom>
               
-              <ButtonCustom 
-                variant="outline" 
-                size="lg"
-                className="border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm shadow-lg font-semibold px-8 py-4"
-              >
+              <ButtonCustom variant="outline" size="lg" className="border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm shadow-lg font-semibold px-8 py-4">
                 Learn More
               </ButtonCustom>
             </div>
@@ -172,8 +161,6 @@ const CallToAction: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CallToAction;
