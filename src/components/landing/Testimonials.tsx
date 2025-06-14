@@ -5,7 +5,7 @@ interface Testimonial {
   id: number;
   name: string;
   role: string;
-  image: string;
+  image?: string;
   rating: number;
   text: string;
 }
@@ -15,9 +15,8 @@ const testimonials: Testimonial[] = [
     id: 1,
     name: "Bhola Yadav",
     role: "Full Scholar at TU",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&h=120&q=60",
     rating: 5,
-    text: "PioneerLearn completely transformed my career. The interactive learning environment made it easy to learn and practice simultaneously. It changes my way of thinking"
+    text: "PioneerLearn completely transformed my career journey. The interactive learning environment made complex concepts easy to understand and practice simultaneously. It fundamentally changed my way of thinking and opened new possibilities I never imagined before."
   },
   {
     id: 2,
@@ -41,13 +40,15 @@ const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({ testimonial }
   return (
     <div className="bg-white p-6 rounded-lg shadow-md">
       <div className="flex items-start mb-4">
-        <div className="h-12 w-12 rounded-full overflow-hidden mr-4">
-          <img 
-            src={testimonial.image} 
-            alt={testimonial.name} 
-            className="h-full w-full object-cover"
-          />
-        </div>
+        {testimonial.image && (
+          <div className="h-12 w-12 rounded-full overflow-hidden mr-4">
+            <img 
+              src={testimonial.image} 
+              alt={testimonial.name} 
+              className="h-full w-full object-cover"
+            />
+          </div>
+        )}
         <div>
           <h4 className="font-semibold text-pioneer-deep-blue">{testimonial.name}</h4>
           <p className="text-sm text-gray-600">{testimonial.role}</p>
