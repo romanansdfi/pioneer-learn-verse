@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, BookOpen, Users, Calendar, Trophy, Camera, MapPin, Phone, Mail, Clock, GraduationCap, Award, Star, ChevronRight, Sparkles, Target, Heart } from 'lucide-react';
@@ -356,7 +355,7 @@ const SchoolInfo: React.FC = () => {
               {courses.map((course, index) => <Card key={index} className="card-hover border-0 shadow-xl rounded-3xl overflow-hidden">
                   <CardHeader className={`bg-gradient-to-r ${course.color} text-white rounded-t-3xl`}>
                     <CardTitle className="text-2xl font-bold">{course.class}</CardTitle>
-                    <CardDescription className="text-white/80 text-lg">CBSE Curriculum</CardDescription>
+                    <CardDescription className="text-white/80 text-lg">NEB Curriculum</CardDescription>
                   </CardHeader>
                   <CardContent className="p-8 bg-gradient-to-br from-white to-gray-50">
                     <div className="flex flex-wrap gap-3">
@@ -379,11 +378,7 @@ const SchoolInfo: React.FC = () => {
                 <div className="flex flex-col md:flex-row gap-8">
                   <div className="md:w-1/3">
                     <div className="w-64 h-64 rounded-3xl mx-auto overflow-hidden shadow-2xl">
-                      <img 
-                        src="/lovable-uploads/8b054e9c-2095-4ab3-916a-0e7f2c9da936.png" 
-                        alt="Principal Ramanand Chy" 
-                        className="w-full h-full object-cover"
-                      />
+                      <img src="/lovable-uploads/8b054e9c-2095-4ab3-916a-0e7f2c9da936.png" alt="Principal Ramanand Chy" className="w-full h-full object-cover" />
                     </div>
                     <div className="text-center mt-6">
                       <h3 className="font-bold text-2xl text-pioneer-deep-blue">Ramanand Chy</h3>
