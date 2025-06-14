@@ -24,18 +24,18 @@ const testimonials: Testimonial[] = [
   {
     id: 2,
     name: "Asona Rouniyar",
-    role: "Data Scientist",
+    role: "CA",
     initials: "AR",
     rating: 5,
     text: "The courses are really good and always kept up-to-date with what's happening in the real world. The teachers know a lot and are always ready to help if we have any doubts."
   },
   {
     id: 3,
-    name: "Aisha Williams",
-    role: "UX Designer",
+    name: "Shristika Chy",
+    role: "Civil Engineer",
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=60",
     rating: 4,
-    text: "I've tried many platforms but PioneerLearn offers the best mix of theoretical knowledge and practical exercises. The project-based learning approach helped me build an impressive portfolio."
+    text: "I've tried many school but PioneerLearn offers the best mix of theoretical knowledge and practical exercises. The practical based learning approach helped me build an impressive career."
   }
 ];
 
