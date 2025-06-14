@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Trophy, Star, Award, ArrowRight, Users, GraduationCap } from 'lucide-react';
 import ButtonCustom from '../ui/button-custom';
@@ -38,11 +37,11 @@ const topperStudents: Student[] = [
     name: "Rambilas Sah",
     class: "Bachelor's",
     achievement: "National Level Mathematics Finalist",
-    description: "National level mathematics finalist with 97% and secured 4th position in India, currently studying at Bangalore",
+    description: "National level mathematics finalist with 97% and secured 4th position in India, currently studying at Bangalore. Achieved 4 GPA in 10th standard.",
     score: "97%",
     rank: "4th",
     subjects: ["Mathematics", "Science", "Statistics", "Physics"],
-    image: "https://images.unsplash.com/photo-1494790108755-2616c7e20093?auto=format&fit=crop&w=400&h=400&q=60",
+    image: "/lovable-uploads/3706d399-675c-4d4f-9f41-c12ed26cd790.png",
     badge: "Mathematics Champion",
     icon: <Award className="w-6 h-6" />,
     gradient: "from-purple-500 to-pink-500"
