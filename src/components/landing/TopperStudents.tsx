@@ -56,8 +56,8 @@ const topperStudents: Student[] = [
     score: "95.5%",
     rank: "1st",
     subjects: ["Computer Science", "Mathematics", "Science", "English"],
-    image: "/lovable-uploads/5fc1c40b-9666-4b2b-896a-bb5a2cc4a78f.png",
-    badge: "All-Rounder",
+    image: "/lovable-uploads/89faa761-6496-4316-8404-8b36f80602e5.png",
+    badge: "Entrance Topper",
     icon: <Star className="w-6 h-6" />,
     gradient: "from-blue-500 to-cyan-500"
   }
