@@ -45,11 +45,16 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center group">
-              <div className="w-10 h-10 bg-gradient-to-br from-pioneer-deep-blue to-pioneer-light-blue rounded-xl flex items-center justify-center mr-3 transform group-hover:scale-110 transition-transform duration-300">
+              <div className="relative w-10 h-10 bg-gradient-to-br from-pioneer-green to-emerald-500 rounded-xl flex items-center justify-center mr-3 transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
                 <span className="text-white font-bold text-lg">P</span>
+                {/* Crosser element */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-6 h-0.5 bg-white/20 transform rotate-45"></div>
+                  <div className="w-6 h-0.5 bg-white/20 transform -rotate-45 absolute"></div>
+                </div>
               </div>
-              <span className="text-pioneer-deep-blue text-xl font-bold group-hover:text-pioneer-light-blue transition-colors">
-                Pioneer<span className="text-pioneer-light-blue">Learn</span>
+              <span className="text-pioneer-deep-blue text-xl font-bold group-hover:text-pioneer-green transition-colors">
+                Pioneer<span className="text-pioneer-green font-extrabold">Learn</span>
               </span>
             </Link>
           </div>
@@ -61,24 +66,24 @@ const Navbar: React.FC = () => {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className="relative text-gray-600 hover:text-pioneer-deep-blue px-4 py-2 text-sm font-medium transition-all duration-300 group"
+                  className="relative text-gray-600 hover:text-pioneer-green px-4 py-2 text-sm font-medium transition-all duration-300 group"
                 >
                   {link.name}
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-pioneer-light-blue to-pioneer-green transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-pioneer-green to-emerald-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                 </Link>
               ))}
             </div>
             
             <div className="flex items-center space-x-3">
               {/* Search Button */}
-              <button className="text-gray-600 hover:text-pioneer-deep-blue p-2 rounded-lg hover:bg-gray-100 transition-all duration-300">
+              <button className="text-gray-600 hover:text-pioneer-green p-2 rounded-lg hover:bg-green-50 transition-all duration-300">
                 <Search className="h-5 w-5" />
               </button>
               
               {isLoggedIn && (
                 <div className="flex items-center space-x-3">
                   {/* Notifications */}
-                  <button className="relative text-gray-600 hover:text-pioneer-deep-blue p-2 rounded-lg hover:bg-gray-100 transition-all duration-300">
+                  <button className="relative text-gray-600 hover:text-pioneer-green p-2 rounded-lg hover:bg-green-50 transition-all duration-300">
                     <Bell className="h-5 w-5" />
                     <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-pulse"></span>
                   </button>
@@ -87,9 +92,9 @@ const Navbar: React.FC = () => {
                   <div className="relative group">
                     <Link 
                       to="/profile" 
-                      className="flex items-center space-x-2 text-gray-600 hover:text-pioneer-deep-blue p-2 rounded-lg hover:bg-gray-100 transition-all duration-300"
+                      className="flex items-center space-x-2 text-gray-600 hover:text-pioneer-green p-2 rounded-lg hover:bg-green-50 transition-all duration-300"
                     >
-                      <div className="h-8 w-8 rounded-full bg-gradient-to-br from-pioneer-deep-blue to-pioneer-light-blue text-white flex items-center justify-center shadow-lg">
+                      <div className="h-8 w-8 rounded-full bg-gradient-to-br from-pioneer-green to-emerald-500 text-white flex items-center justify-center shadow-lg">
                         <User className="h-4 w-4" />
                       </div>
                       <ChevronDown className="h-4 w-4" />
@@ -113,7 +118,7 @@ const Navbar: React.FC = () => {
           <div className="flex md:hidden">
             <button
               onClick={toggleMobileMenu}
-              className="inline-flex items-center justify-center p-2 rounded-lg text-gray-600 hover:text-pioneer-deep-blue hover:bg-gray-100 transition-all duration-300"
+              className="inline-flex items-center justify-center p-2 rounded-lg text-gray-600 hover:text-pioneer-green hover:bg-green-50 transition-all duration-300"
             >
               {isMobileMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -134,7 +139,7 @@ const Navbar: React.FC = () => {
             <Link
               key={link.name}
               to={link.path}
-              className="block px-3 py-3 text-base font-medium text-gray-600 hover:text-pioneer-deep-blue hover:bg-gradient-to-r hover:from-pioneer-light-blue/10 hover:to-pioneer-green/10 rounded-lg transition-all duration-300"
+              className="block px-3 py-3 text-base font-medium text-gray-600 hover:text-pioneer-green hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50 rounded-lg transition-all duration-300"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {link.name}
@@ -145,7 +150,7 @@ const Navbar: React.FC = () => {
             <div className="pt-4 space-y-2">
               <Link
                 to="/profile"
-                className="flex items-center px-3 py-3 text-base font-medium text-gray-600 hover:text-pioneer-deep-blue hover:bg-gradient-to-r hover:from-pioneer-light-blue/10 hover:to-pioneer-green/10 rounded-lg transition-all duration-300"
+                className="flex items-center px-3 py-3 text-base font-medium text-gray-600 hover:text-pioneer-green hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50 rounded-lg transition-all duration-300"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <User className="h-5 w-5 mr-3" />
