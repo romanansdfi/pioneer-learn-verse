@@ -139,10 +139,22 @@ const SchoolInfo: React.FC = () => {
   }, {
     category: "Campus",
     images: [
-      { name: "Main Building", src: null },
-      { name: "Library", src: null },
-      { name: "Computer Lab", src: null },
-      { name: "Playground", src: null }
+      {
+        name: "Main Building",
+        src: "/lovable-uploads/f0aa7b9b-f9e2-45a3-a6e4-b03662546915.png"
+      },
+      {
+        name: "School Building",
+        src: "/lovable-uploads/1ba9f8f8-1f9e-478a-b39f-78c4df5ffc3c.png"
+      },
+      {
+        name: "School Campus",
+        src: "/lovable-uploads/dd83c237-e60f-4c73-b816-be3e41270021.png"
+      },
+      {
+        name: "Principal",
+        src: "/lovable-uploads/f3e9afbf-4c37-4f7b-8571-f3b922a3b9bd.png"
+      }
     ],
     color: "from-blue-500 to-cyan-500"
   }, {
