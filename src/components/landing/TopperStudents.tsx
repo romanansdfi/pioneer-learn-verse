@@ -22,14 +22,14 @@ interface Student {
 const topperStudents: Student[] = [
   {
     id: 1,
-    name: "Arjun Sharma",
+    name: "Binu Chy",
     class: "Class 12th Science",
-    achievement: "Board Examination Topper",
-    description: "Achieved 98.2% in CBSE Board Exams with perfect scores in Physics, Chemistry, and Mathematics",
-    score: "98.2%",
+    achievement: "School Topper & Scholarship Recipient",
+    description: "School topper with 98% marks in academy and secured a full scholarship for 11th and 12th grade. Demonstrated exceptional academic excellence and leadership qualities throughout her academic journey.",
+    score: "98%",
     rank: "1st",
-    subjects: ["Physics", "Chemistry", "Mathematics", "English"],
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&h=400&q=60",
+    subjects: ["Physics", "Chemistry", "Mathematics", "Biology"],
+    image: "/lovable-uploads/beface37-9d6d-4266-bae0-ed482488d7e1.png",
     badge: "Academic Excellence",
     icon: <Trophy className="w-6 h-6" />,
     gradient: "from-yellow-500 to-orange-500"
