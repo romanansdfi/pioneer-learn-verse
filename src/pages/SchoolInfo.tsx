@@ -161,9 +161,8 @@ const SchoolInfo: React.FC = () => {
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <Tabs defaultValue="welcome" className="w-full">
-          <TabsList className="grid w-full grid-cols-4 md:grid-cols-10 lg:grid-cols-10 mb-12 bg-white/50 backdrop-blur-sm border-0 shadow-lg rounded-2xl p-2">
+          <TabsList className="grid w-full grid-cols-4 md:grid-cols-8 lg:grid-cols-8 mb-12 bg-white/50 backdrop-blur-sm border-0 shadow-lg rounded-2xl p-2">
             <TabsTrigger value="welcome" className="rounded-xl font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-pioneer-deep-blue data-[state=active]:to-pioneer-light-blue data-[state=active]:text-white">Welcome</TabsTrigger>
-            <TabsTrigger value="about" className="rounded-xl font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-pioneer-deep-blue data-[state=active]:to-pioneer-light-blue data-[state=active]:text-white">About</TabsTrigger>
             <TabsTrigger value="courses" className="rounded-xl font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-pioneer-deep-blue data-[state=active]:to-pioneer-light-blue data-[state=active]:text-white">Courses</TabsTrigger>
             <TabsTrigger value="principal" className="rounded-xl font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-pioneer-deep-blue data-[state=active]:to-pioneer-light-blue data-[state=active]:text-white">Principal</TabsTrigger>
             <TabsTrigger value="sports" className="rounded-xl font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-pioneer-deep-blue data-[state=active]:to-pioneer-light-blue data-[state=active]:text-white">Sports</TabsTrigger>
@@ -171,7 +170,6 @@ const SchoolInfo: React.FC = () => {
             <TabsTrigger value="gallery" className="rounded-xl font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-pioneer-deep-blue data-[state=active]:to-pioneer-light-blue data-[state=active]:text-white">Gallery</TabsTrigger>
             <TabsTrigger value="events" className="rounded-xl font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-pioneer-deep-blue data-[state=active]:to-pioneer-light-blue data-[state=active]:text-white">Events</TabsTrigger>
             <TabsTrigger value="student-zone" className="rounded-xl font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-pioneer-deep-blue data-[state=active]:to-pioneer-light-blue data-[state=active]:text-white">Students</TabsTrigger>
-            <TabsTrigger value="contact" className="rounded-xl font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-pioneer-deep-blue data-[state=active]:to-pioneer-light-blue data-[state=active]:text-white">Contact</TabsTrigger>
           </TabsList>
 
           {/* Welcome Tab */}
@@ -283,84 +281,6 @@ const SchoolInfo: React.FC = () => {
                 </div>
               </CardContent>
             </Card>
-          </TabsContent>
-
-          {/* About Tab */}
-          <TabsContent value="about" className="space-y-8">
-            {/* Leadership Section */}
-            <div className="space-y-8">
-              <div className="text-center">
-                <h2 className="text-4xl font-bold text-pioneer-deep-blue mb-4">Our Leadership</h2>
-                <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                  Meet the dedicated leaders who guide Pioneer Academy towards excellence in education and character development.
-                </p>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {leadership.map((leader, index) => (
-                  <Card key={index} className="card-hover border-0 shadow-xl rounded-3xl overflow-hidden">
-                    <CardHeader className={`bg-gradient-to-r ${leader.color} text-white rounded-t-3xl`}>
-                      <div className="flex items-center gap-4">
-                        <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center">
-                          <Users className="h-10 w-10 text-white" />
-                        </div>
-                        <div>
-                          <CardTitle className="text-2xl font-bold">{leader.name}</CardTitle>
-                          <CardDescription className="text-white/80 text-lg font-semibold">{leader.position}</CardDescription>
-                        </div>
-                      </div>
-                    </CardHeader>
-                    <CardContent className="p-8 bg-gradient-to-br from-white to-gray-50">
-                      <div className="space-y-4">
-                        <div className="flex items-center gap-3">
-                          <Badge className="bg-pioneer-light-blue/10 text-pioneer-light-blue border-pioneer-light-blue/20">
-                            {leader.qualification}
-                          </Badge>
-                          <Badge className="bg-pioneer-green/10 text-pioneer-green border-pioneer-green/20">
-                            {leader.experience}
-                          </Badge>
-                        </div>
-                        <p className="text-gray-700 leading-relaxed">{leader.description}</p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-
-            {/* Team Section */}
-            <div className="space-y-8">
-              <div className="text-center">
-                <h2 className="text-4xl font-bold text-pioneer-deep-blue mb-4">Our Team</h2>
-                <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                  Our dedicated faculty and staff members bring expertise, passion, and commitment to educational excellence.
-                </p>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {teamMembers.map((member, index) => (
-                  <Card key={index} className="card-hover border-0 shadow-xl rounded-3xl overflow-hidden">
-                    <CardHeader className={`bg-gradient-to-r ${member.color} text-white rounded-t-3xl`}>
-                      <div className="text-center">
-                        <div className="w-16 h-16 bg-white/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                          <Users className="h-8 w-8 text-white" />
-                        </div>
-                        <CardTitle className="text-xl font-bold">{member.name}</CardTitle>
-                        <CardDescription className="text-white/80 font-semibold">{member.position}</CardDescription>
-                      </div>
-                    </CardHeader>
-                    <CardContent className="p-6 bg-gradient-to-br from-white to-gray-50">
-                      <div className="space-y-3 text-center">
-                        <Badge className="bg-pioneer-deep-blue/10 text-pioneer-deep-blue border-pioneer-deep-blue/20">
-                          {member.department}
-                        </Badge>
-                        <p className="text-sm text-gray-600">{member.qualification}</p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
           </TabsContent>
 
           {/* Courses Tab */}
@@ -620,80 +540,6 @@ const SchoolInfo: React.FC = () => {
                       </div>
                     ))}
                   </div>
-                </CardContent>
-              </Card>
-            </div>
-          </TabsContent>
-
-          {/* Contact Tab */}
-          <TabsContent value="contact">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <Card className="card-hover border-0 shadow-xl rounded-3xl overflow-hidden">
-                <CardHeader className="bg-gradient-to-r from-pioneer-deep-blue to-pioneer-light-blue text-white rounded-t-3xl">
-                  <CardTitle className="text-2xl">Contact Information</CardTitle>
-                </CardHeader>
-                <CardContent className="p-8 bg-gradient-to-br from-white to-blue-50 space-y-6">
-                  {[
-                    { icon: MapPin, title: "Address", content: "123 Education Street, Learning City, LC 12345", color: "from-blue-500 to-purple-500" },
-                    { icon: Phone, title: "Phone", content: "+1 (555) 123-4567", color: "from-green-500 to-emerald-500" },
-                    { icon: Mail, title: "Email", content: "info@pioneeracademy.edu", color: "from-purple-500 to-pink-500" },
-                    { icon: Clock, title: "Office Hours", content: "Monday - Friday: 8:00 AM - 4:00 PM", color: "from-orange-500 to-red-500" }
-                  ].map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-4 p-4 bg-white/50 rounded-2xl border border-blue-100">
-                      <div className={`p-3 bg-gradient-to-r ${item.color} rounded-full`}>
-                        <item.icon className="h-6 w-6 text-white" />
-                      </div>
-                      <div>
-                        <p className="font-bold text-gray-800 mb-1">{item.title}</p>
-                        <p className="text-gray-600">{item.content}</p>
-                      </div>
-                    </div>
-                  ))}
-                </CardContent>
-              </Card>
-
-              <Card className="card-hover border-0 shadow-xl rounded-3xl overflow-hidden">
-                <CardHeader className="bg-gradient-to-r from-pioneer-green to-emerald-500 text-white rounded-t-3xl">
-                  <CardTitle className="text-2xl">Send us a Message</CardTitle>
-                </CardHeader>
-                <CardContent className="p-8 bg-gradient-to-br from-white to-green-50">
-                  <form className="space-y-6">
-                    <div>
-                      <label className="block text-sm font-bold mb-2 text-gray-700">Name</label>
-                      <input 
-                        type="text" 
-                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-pioneer-light-blue/20 focus:border-pioneer-light-blue transition-all duration-300 bg-white/80" 
-                        placeholder="Your full name"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-bold mb-2 text-gray-700">Email</label>
-                      <input 
-                        type="email" 
-                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-pioneer-light-blue/20 focus:border-pioneer-light-blue transition-all duration-300 bg-white/80" 
-                        placeholder="your.email@example.com"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-bold mb-2 text-gray-700">Subject</label>
-                      <input 
-                        type="text" 
-                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-pioneer-light-blue/20 focus:border-pioneer-light-blue transition-all duration-300 bg-white/80" 
-                        placeholder="Inquiry subject"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-bold mb-2 text-gray-700">Message</label>
-                      <textarea 
-                        rows={4}
-                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-pioneer-light-blue/20 focus:border-pioneer-light-blue transition-all duration-300 bg-white/80 resize-none" 
-                        placeholder="Your message here..."
-                      ></textarea>
-                    </div>
-                    <ButtonCustom variant="primary" fullWidth className="bg-gradient-to-r from-pioneer-green to-emerald-500 hover:shadow-xl hover:scale-105 transition-all duration-300 py-4 text-lg font-semibold rounded-2xl">
-                      Send Message
-                    </ButtonCustom>
-                  </form>
                 </CardContent>
               </Card>
             </div>
