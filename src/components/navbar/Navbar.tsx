@@ -45,12 +45,12 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center group">
-              <div className="relative w-10 h-10 bg-gradient-to-br from-pioneer-green to-emerald-500 rounded-xl flex items-center justify-center mr-3 transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <span className="text-white font-bold text-lg">P</span>
-                {/* Crosser element */}
+              <div className="relative w-10 h-10 bg-gradient-to-br from-white to-gray-100 border-2 border-pioneer-green rounded-xl flex items-center justify-center mr-3 transform group-hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-xl">
+                <span className="text-pioneer-green font-bold text-lg">P</span>
+                {/* Green crosser element */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-6 h-0.5 bg-white/20 transform rotate-45"></div>
-                  <div className="w-6 h-0.5 bg-white/20 transform -rotate-45 absolute"></div>
+                  <div className="w-6 h-0.5 bg-pioneer-green/30 transform rotate-45"></div>
+                  <div className="w-6 h-0.5 bg-pioneer-green/30 transform -rotate-45 absolute"></div>
                 </div>
               </div>
               <span className="text-pioneer-deep-blue text-xl font-bold group-hover:text-pioneer-green transition-colors">
