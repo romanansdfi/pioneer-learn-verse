@@ -1,37 +1,26 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { BookOpen } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import ButtonCustom from '@/components/ui/button-custom';
-import SchoolInfoModal from './SchoolInfoModal';
 
 const ExploreSchoolButton: React.FC = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
 
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
+  const handleNavigateToSchoolInfo = () => {
+    navigate('/school-info');
   };
 
   return (
-    <>
-      <ButtonCustom 
-        variant="accent" 
-        size="lg" 
-        className="shadow-lg animate-bounce-slow"
-        leftIcon={<BookOpen />}
-        onClick={handleOpenModal}
-      >
-        Explore School Info
-      </ButtonCustom>
-      
-      <SchoolInfoModal 
-        open={isModalOpen} 
-        onClose={handleCloseModal} 
-      />
-    </>
+    <ButtonCustom 
+      variant="accent" 
+      size="lg" 
+      className="shadow-lg animate-bounce-slow"
+      leftIcon={<BookOpen />}
+      onClick={handleNavigateToSchoolInfo}
+    >
+      Explore School Info
+    </ButtonCustom>
   );
 };
 
