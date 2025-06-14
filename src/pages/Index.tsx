@@ -1,4 +1,6 @@
+
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/navbar/Navbar';
 import HeroSection from '../components/landing/HeroSection';
 import FeaturedCourses from '../components/landing/FeaturedCourses';
@@ -72,11 +74,11 @@ const Index: React.FC = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Company</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-300 hover:text-white">About Us</a></li>
+              <li><Link to="/about" className="text-gray-300 hover:text-white">About Us</Link></li>
               <li><a href="#" className="text-gray-300 hover:text-white">Careers</a></li>
               <li><a href="#" className="text-gray-300 hover:text-white">Press</a></li>
               <li><a href="#" className="text-gray-300 hover:text-white">Partners</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white">Contact</a></li>
+              <li><Link to="/contact" className="text-gray-300 hover:text-white">Contact</Link></li>
             </ul>
           </div>
           
