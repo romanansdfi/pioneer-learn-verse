@@ -70,7 +70,7 @@ const CallToAction: React.FC = () => {
                 <div className="w-8 h-8 bg-pink-500 rounded-full flex items-center justify-center mr-3">
                   <Star className="w-4 h-4 text-white" />
                 </div>
-                <span>Lifetime Access</span>
+                <span>Life changing </span>
               </div>
             </div>
 
