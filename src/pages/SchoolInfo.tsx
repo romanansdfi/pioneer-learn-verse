@@ -165,8 +165,8 @@ const SchoolInfo: React.FC = () => {
         src: "/lovable-uploads/1c16ef8b-434b-4c49-80be-9f2fb0a3ed69.png"
       },
       {
-        name: "Achievement Awards Ceremony",
-        src: "/lovable-uploads/cfa9805a-90ed-4a62-8cbf-28c4bfc18b81.png"
+        name: "Student with Book",
+        src: "/lovable-uploads/b36eb7d2-af56-4475-bf18-a7d00a2093b9.png"
       },
       {
         name: "Student Recognition Event",
