@@ -9,7 +9,6 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Index from "./pages/Index";
 import Dashboard from "./pages/Dashboard";
 import CourseView from "./pages/CourseView";
-import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
 import Profile from "./pages/Profile";
 
@@ -24,7 +23,6 @@ const App = () => (
         <AuthProvider>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/auth" element={<Auth />} />
             <Route path="/dashboard" element={
               <ProtectedRoute>
                 <Dashboard />

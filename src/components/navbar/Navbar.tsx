@@ -38,11 +38,6 @@ const Navbar: React.FC = () => {
     setIsMobileMenuOpen(false);
   };
 
-  const handleAuthClick = () => {
-    navigate('/auth');
-    setIsMobileMenuOpen(false);
-  };
-
   return (
     <nav className="bg-white/95 backdrop-blur-lg shadow-lg fixed w-full z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -80,7 +75,7 @@ const Navbar: React.FC = () => {
                 <Search className="h-5 w-5" />
               </button>
               
-              {isLoggedIn ? (
+              {isLoggedIn && (
                 <div className="flex items-center space-x-3">
                   {/* Notifications */}
                   <button className="relative text-gray-600 hover:text-pioneer-deep-blue p-2 rounded-lg hover:bg-gray-100 transition-all duration-300">
@@ -109,24 +104,6 @@ const Navbar: React.FC = () => {
                   >
                     <LogOut className="h-5 w-5" />
                   </button>
-                </div>
-              ) : (
-                <div className="flex items-center space-x-3">
-                  <ButtonCustom 
-                    variant="outline" 
-                    size="sm" 
-                    onClick={handleAuthClick}
-                    className="hover:scale-105 transition-transform duration-300"
-                  >
-                    Sign In
-                  </ButtonCustom>
-                  <ButtonCustom 
-                    size="sm" 
-                    onClick={handleAuthClick}
-                    className="bg-gradient-to-r from-pioneer-deep-blue to-pioneer-light-blue hover:shadow-lg hover:scale-105 transition-all duration-300"
-                  >
-                    Sign Up
-                  </ButtonCustom>
                 </div>
               )}
             </div>
@@ -164,47 +141,27 @@ const Navbar: React.FC = () => {
             </Link>
           ))}
           
-          <div className="pt-4 space-y-2">
-            {isLoggedIn ? (
-              <>
-                <Link
-                  to="/profile"
-                  className="flex items-center px-3 py-3 text-base font-medium text-gray-600 hover:text-pioneer-deep-blue hover:bg-gradient-to-r hover:from-pioneer-light-blue/10 hover:to-pioneer-green/10 rounded-lg transition-all duration-300"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <User className="h-5 w-5 mr-3" />
-                  Profile
-                </Link>
-                <ButtonCustom 
-                  variant="outline" 
-                  fullWidth 
-                  onClick={handleSignOut}
-                  leftIcon={<LogOut className="h-4 w-4" />}
-                  className="justify-start hover:bg-red-50 hover:border-red-200 hover:text-red-600"
-                >
-                  Sign Out
-                </ButtonCustom>
-              </>
-            ) : (
-              <>
-                <ButtonCustom 
-                  variant="outline" 
-                  fullWidth 
-                  onClick={handleAuthClick}
-                  className="hover:scale-105 transition-transform duration-300"
-                >
-                  Sign In
-                </ButtonCustom>
-                <ButtonCustom 
-                  fullWidth 
-                  onClick={handleAuthClick}
-                  className="bg-gradient-to-r from-pioneer-deep-blue to-pioneer-light-blue hover:shadow-lg hover:scale-105 transition-all duration-300"
-                >
-                  Sign Up
-                </ButtonCustom>
-              </>
-            )}
-          </div>
+          {isLoggedIn && (
+            <div className="pt-4 space-y-2">
+              <Link
+                to="/profile"
+                className="flex items-center px-3 py-3 text-base font-medium text-gray-600 hover:text-pioneer-deep-blue hover:bg-gradient-to-r hover:from-pioneer-light-blue/10 hover:to-pioneer-green/10 rounded-lg transition-all duration-300"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <User className="h-5 w-5 mr-3" />
+                Profile
+              </Link>
+              <ButtonCustom 
+                variant="outline" 
+                fullWidth 
+                onClick={handleSignOut}
+                leftIcon={<LogOut className="h-4 w-4" />}
+                className="justify-start hover:bg-red-50 hover:border-red-200 hover:text-red-600"
+              >
+                Sign Out
+              </ButtonCustom>
+            </div>
+          )}
         </div>
       </div>
     </nav>
