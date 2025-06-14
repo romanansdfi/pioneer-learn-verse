@@ -10,19 +10,19 @@ const SchoolInfo: React.FC = () => {
   const [selectedGallery, setSelectedGallery] = useState<string | null>(null);
   const courses = [{
     class: "Class 1-2",
-    subjects: ["English", "Mathematics", "Environmental Science", "Hindi", "Art & Craft", "Physical Education"],
+    subjects: ["English", "Mathematics", "Environmental Science", "Nepali", "Art & Craft", "Physical Education"],
     color: "from-pink-500 to-rose-500"
   }, {
     class: "Class 3-5",
-    subjects: ["English", "Mathematics", "Environmental Science", "Hindi", "Computer Science", "Art & Craft", "Physical Education"],
+    subjects: ["English", "Mathematics", "Environmental Science", "Nepali", "Computer Science", "Art & Craft", "Physical Education"],
     color: "from-purple-500 to-indigo-500"
   }, {
     class: "Class 6-8",
-    subjects: ["English", "Mathematics", "Science", "Social Science", "Hindi", "Computer Science", "Art & Craft", "Physical Education"],
+    subjects: ["English", "Mathematics", "Science", "Social Science", "Nepali", "Computer Science", "Art & Craft", "Physical Education"],
     color: "from-blue-500 to-cyan-500"
   }, {
     class: "Class 9-10",
-    subjects: ["English", "Mathematics", "Science", "Social Science", "Hindi", "Computer Applications", "Physical Education"],
+    subjects: ["English", "Mathematics", "Science", "Social Science", "Nepali", "Computer Applications", "Physical Education"],
     color: "from-emerald-500 to-teal-500"
   }];
   const sports = [{
