@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, BookOpen, Users, Calendar, Trophy, Camera, MapPin, Phone, Mail, Clock, GraduationCap, Award, Star, ChevronRight, Sparkles, Target, Heart } from 'lucide-react';
@@ -47,6 +46,70 @@ const SchoolInfo: React.FC = () => {
     { category: "Events", images: ["Annual Day 2023", "Science Fair", "Sports Day", "Cultural Program"], color: "from-purple-500 to-indigo-500" },
     { category: "Campus", images: ["Main Building", "Library", "Computer Lab", "Playground"], color: "from-blue-500 to-cyan-500" },
     { category: "Activities", images: ["Art Class", "Music Room", "Dance Performance", "Drama Club"], color: "from-green-500 to-teal-500" }
+  ];
+
+  const leadership = [
+    {
+      name: "Dr. Sarah Johnson",
+      position: "Principal",
+      qualification: "M.Ed, Ph.D in Education",
+      experience: "15+ years",
+      description: "Leading Pioneer Academy with vision and dedication to excellence in education.",
+      color: "from-blue-500 to-purple-500"
+    },
+    {
+      name: "Mr. David Wilson",
+      position: "Vice Principal",
+      qualification: "M.A. in Educational Administration",
+      experience: "12+ years",
+      description: "Supporting academic operations and student development initiatives.",
+      color: "from-green-500 to-teal-500"
+    }
+  ];
+
+  const teamMembers = [
+    {
+      name: "Ms. Emily Chen",
+      position: "Head of Academics",
+      department: "Academic Affairs",
+      qualification: "M.Ed in Curriculum Development",
+      color: "from-pink-500 to-rose-500"
+    },
+    {
+      name: "Mr. James Rodriguez",
+      position: "Sports Coordinator",
+      department: "Physical Education",
+      qualification: "B.P.Ed, Diploma in Sports Management",
+      color: "from-orange-500 to-red-500"
+    },
+    {
+      name: "Dr. Priya Sharma",
+      position: "Science Department Head",
+      department: "Sciences",
+      qualification: "Ph.D in Chemistry",
+      color: "from-cyan-500 to-blue-500"
+    },
+    {
+      name: "Ms. Rachel Thompson",
+      position: "Arts & Culture Head",
+      department: "Creative Arts",
+      qualification: "M.A. in Fine Arts",
+      color: "from-purple-500 to-indigo-500"
+    },
+    {
+      name: "Mr. Ahmed Hassan",
+      position: "Technology Coordinator",
+      department: "IT & Computer Science",
+      qualification: "M.Tech in Computer Science",
+      color: "from-emerald-500 to-green-500"
+    },
+    {
+      name: "Ms. Lisa Parker",
+      position: "Student Counselor",
+      department: "Student Affairs",
+      qualification: "M.A. in Psychology",
+      color: "from-yellow-500 to-orange-500"
+    }
   ];
 
   return (
@@ -98,8 +161,9 @@ const SchoolInfo: React.FC = () => {
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <Tabs defaultValue="welcome" className="w-full">
-          <TabsList className="grid w-full grid-cols-4 md:grid-cols-9 lg:grid-cols-9 mb-12 bg-white/50 backdrop-blur-sm border-0 shadow-lg rounded-2xl p-2">
+          <TabsList className="grid w-full grid-cols-4 md:grid-cols-10 lg:grid-cols-10 mb-12 bg-white/50 backdrop-blur-sm border-0 shadow-lg rounded-2xl p-2">
             <TabsTrigger value="welcome" className="rounded-xl font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-pioneer-deep-blue data-[state=active]:to-pioneer-light-blue data-[state=active]:text-white">Welcome</TabsTrigger>
+            <TabsTrigger value="about" className="rounded-xl font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-pioneer-deep-blue data-[state=active]:to-pioneer-light-blue data-[state=active]:text-white">About</TabsTrigger>
             <TabsTrigger value="courses" className="rounded-xl font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-pioneer-deep-blue data-[state=active]:to-pioneer-light-blue data-[state=active]:text-white">Courses</TabsTrigger>
             <TabsTrigger value="principal" className="rounded-xl font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-pioneer-deep-blue data-[state=active]:to-pioneer-light-blue data-[state=active]:text-white">Principal</TabsTrigger>
             <TabsTrigger value="sports" className="rounded-xl font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-pioneer-deep-blue data-[state=active]:to-pioneer-light-blue data-[state=active]:text-white">Sports</TabsTrigger>
@@ -219,6 +283,84 @@ const SchoolInfo: React.FC = () => {
                 </div>
               </CardContent>
             </Card>
+          </TabsContent>
+
+          {/* About Tab */}
+          <TabsContent value="about" className="space-y-8">
+            {/* Leadership Section */}
+            <div className="space-y-8">
+              <div className="text-center">
+                <h2 className="text-4xl font-bold text-pioneer-deep-blue mb-4">Our Leadership</h2>
+                <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                  Meet the dedicated leaders who guide Pioneer Academy towards excellence in education and character development.
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {leadership.map((leader, index) => (
+                  <Card key={index} className="card-hover border-0 shadow-xl rounded-3xl overflow-hidden">
+                    <CardHeader className={`bg-gradient-to-r ${leader.color} text-white rounded-t-3xl`}>
+                      <div className="flex items-center gap-4">
+                        <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center">
+                          <Users className="h-10 w-10 text-white" />
+                        </div>
+                        <div>
+                          <CardTitle className="text-2xl font-bold">{leader.name}</CardTitle>
+                          <CardDescription className="text-white/80 text-lg font-semibold">{leader.position}</CardDescription>
+                        </div>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="p-8 bg-gradient-to-br from-white to-gray-50">
+                      <div className="space-y-4">
+                        <div className="flex items-center gap-3">
+                          <Badge className="bg-pioneer-light-blue/10 text-pioneer-light-blue border-pioneer-light-blue/20">
+                            {leader.qualification}
+                          </Badge>
+                          <Badge className="bg-pioneer-green/10 text-pioneer-green border-pioneer-green/20">
+                            {leader.experience}
+                          </Badge>
+                        </div>
+                        <p className="text-gray-700 leading-relaxed">{leader.description}</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
+            {/* Team Section */}
+            <div className="space-y-8">
+              <div className="text-center">
+                <h2 className="text-4xl font-bold text-pioneer-deep-blue mb-4">Our Team</h2>
+                <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                  Our dedicated faculty and staff members bring expertise, passion, and commitment to educational excellence.
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {teamMembers.map((member, index) => (
+                  <Card key={index} className="card-hover border-0 shadow-xl rounded-3xl overflow-hidden">
+                    <CardHeader className={`bg-gradient-to-r ${member.color} text-white rounded-t-3xl`}>
+                      <div className="text-center">
+                        <div className="w-16 h-16 bg-white/20 rounded-full mx-auto mb-4 flex items-center justify-center">
+                          <Users className="h-8 w-8 text-white" />
+                        </div>
+                        <CardTitle className="text-xl font-bold">{member.name}</CardTitle>
+                        <CardDescription className="text-white/80 font-semibold">{member.position}</CardDescription>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="p-6 bg-gradient-to-br from-white to-gray-50">
+                      <div className="space-y-3 text-center">
+                        <Badge className="bg-pioneer-deep-blue/10 text-pioneer-deep-blue border-pioneer-deep-blue/20">
+                          {member.department}
+                        </Badge>
+                        <p className="text-sm text-gray-600">{member.qualification}</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
           </TabsContent>
 
           {/* Courses Tab */}
