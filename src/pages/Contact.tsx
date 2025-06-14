@@ -4,10 +4,8 @@ import { ArrowLeft, MapPin, Phone, Mail, Clock, GraduationCap, Calendar, Downloa
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import ButtonCustom from '@/components/ui/button-custom';
 import Navbar from '@/components/navbar/Navbar';
-
 const Contact: React.FC = () => {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
+  return <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
       <Navbar />
       
       {/* Header Section */}
@@ -101,9 +99,9 @@ const Contact: React.FC = () => {
                     <div>
                       <h3 className="font-semibold text-lg text-gray-800 mb-2">Office Hours</h3>
                       <div className="space-y-1 text-gray-600">
-                        <p>Monday - Friday: 8:00 AM - 4:00 PM</p>
-                        <p>Saturday: 9:00 AM - 1:00 PM</p>
-                        <p>Sunday: Closed</p>
+                        <p>Sunday - Thursday: 8:00 AM - 4:00 PM</p>
+                        <p>Friday: 9:00 AM - 1:00 PM</p>
+                        <p>Saturday: Closed</p>
                       </div>
                     </div>
                   </div>
@@ -136,7 +134,7 @@ const Contact: React.FC = () => {
                       </div>
                       <div>
                         <h3 className="font-semibold text-lg text-gray-800 mb-2">Days</h3>
-                        <p className="text-gray-600">Monday to Friday</p>
+                        <p className="text-gray-600">Sunday to Friday</p>
                       </div>
                     </div>
 
@@ -166,10 +164,7 @@ const Contact: React.FC = () => {
                       </div>
                       <div>
                         <h3 className="font-semibold text-lg text-gray-800 mb-2">📍 Campus Map</h3>
-                        <ButtonCustom 
-                          variant="outline" 
-                          className="border-2 border-pioneer-deep-blue text-pioneer-deep-blue hover:bg-pioneer-deep-blue hover:text-white transition-all duration-300 rounded-xl px-6 py-2 inline-flex items-center gap-2"
-                        >
+                        <ButtonCustom variant="outline" className="border-2 border-pioneer-deep-blue text-pioneer-deep-blue hover:bg-pioneer-deep-blue hover:text-white transition-all duration-300 rounded-xl px-6 py-2 inline-flex items-center gap-2">
                           <Download className="h-4 w-4" />
                           Download Here
                         </ButtonCustom>
@@ -196,16 +191,10 @@ const Contact: React.FC = () => {
                   tour our facilities, and learn more about our programs.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
-                  <ButtonCustom 
-                    variant="outline" 
-                    className="border-2 border-pioneer-deep-blue text-pioneer-deep-blue hover:bg-pioneer-deep-blue hover:text-white transition-all duration-300 rounded-2xl px-8 py-3"
-                  >
+                  <ButtonCustom variant="outline" className="border-2 border-pioneer-deep-blue text-pioneer-deep-blue hover:bg-pioneer-deep-blue hover:text-white transition-all duration-300 rounded-2xl px-8 py-3">
                     Schedule a Visit
                   </ButtonCustom>
-                  <ButtonCustom 
-                    variant="outline" 
-                    className="border-2 border-pioneer-green text-pioneer-green hover:bg-pioneer-green hover:text-white transition-all duration-300 rounded-2xl px-8 py-3"
-                  >
+                  <ButtonCustom variant="outline" className="border-2 border-pioneer-green text-pioneer-green hover:bg-pioneer-green hover:text-white transition-all duration-300 rounded-2xl px-8 py-3">
                     Download Brochure
                   </ButtonCustom>
                 </div>
@@ -214,8 +203,6 @@ const Contact: React.FC = () => {
           </Card>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Contact;
