@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import ButtonCustom from '@/components/ui/button-custom';
 import Navbar from '@/components/navbar/Navbar';
+
 const SchoolInfo: React.FC = () => {
   const [selectedGallery, setSelectedGallery] = useState<string | null>(null);
   const courses = [{
@@ -116,15 +117,42 @@ const SchoolInfo: React.FC = () => {
   }];
   const galleryImages = [{
     category: "Events",
-    images: ["Annual Day 2023", "Science Fair", "Sports Day", "Cultural Program"],
+    images: [
+      {
+        name: "Cultural Day Celebration",
+        src: "/lovable-uploads/595e9d9f-fae9-4d78-906e-4df5a40ecd67.png"
+      },
+      {
+        name: "Inter-School Competition",
+        src: "/lovable-uploads/a268eb2e-8e80-442b-858b-87b2383a463c.png"
+      },
+      {
+        name: "Science Project Exhibition",
+        src: "/lovable-uploads/63e9a34c-09e6-4b12-bfdb-7a27c1ce9534.png"
+      },
+      {
+        name: "Academic Achievement Awards",
+        src: "/lovable-uploads/a986bcea-46e9-461d-a208-21cd3ae99949.png"
+      }
+    ],
     color: "from-purple-500 to-indigo-500"
   }, {
     category: "Campus",
-    images: ["Main Building", "Library", "Computer Lab", "Playground"],
+    images: [
+      { name: "Main Building", src: null },
+      { name: "Library", src: null },
+      { name: "Computer Lab", src: null },
+      { name: "Playground", src: null }
+    ],
     color: "from-blue-500 to-cyan-500"
   }, {
     category: "Activities",
-    images: ["Art Class", "Music Room", "Dance Performance", "Drama Club"],
+    images: [
+      { name: "Art Class", src: null },
+      { name: "Music Room", src: null },
+      { name: "Dance Performance", src: null },
+      { name: "Drama Club", src: null }
+    ],
     color: "from-green-500 to-teal-500"
   }];
   const leadership = [{
@@ -479,13 +507,21 @@ const SchoolInfo: React.FC = () => {
                   </CardHeader>
                   <CardContent className="p-8 bg-gradient-to-br from-white to-gray-50">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                      {category.images.map((image, idx) => <div key={idx} className="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-300 group" onClick={() => setSelectedGallery(image)}>
-                          <div className="text-center p-4">
-                            <div className="p-3 bg-white/60 rounded-full mb-3 group-hover:bg-white/80 transition-colors">
-                              <Camera className="h-8 w-8 text-gray-600" />
+                      {category.images.map((image, idx) => <div key={idx} className="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-300 group overflow-hidden" onClick={() => setSelectedGallery(image.name)}>
+                          {image.src ? (
+                            <img 
+                              src={image.src} 
+                              alt={image.name}
+                              className="w-full h-full object-cover rounded-2xl"
+                            />
+                          ) : (
+                            <div className="text-center p-4">
+                              <div className="p-3 bg-white/60 rounded-full mb-3 group-hover:bg-white/80 transition-colors">
+                                <Camera className="h-8 w-8 text-gray-600" />
+                              </div>
+                              <p className="text-sm text-gray-700 font-medium">{image.name}</p>
                             </div>
-                            <p className="text-sm text-gray-700 font-medium">{image}</p>
-                          </div>
+                          )}
                         </div>)}
                     </div>
                   </CardContent>
