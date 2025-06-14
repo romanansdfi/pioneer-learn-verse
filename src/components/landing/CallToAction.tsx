@@ -149,8 +149,7 @@ const CallToAction: React.FC = () => {
                   <span className="text-white font-bold">JD</span>
                 </div>
                 <div>
-                  <p className="text-white/90 italic mb-2">Rambilas Sah - B.Tech std in Banglore
-National Level mathematics Finalist in India</p>
+                  <p className="text-white/90 italic mb-2">Rambilas Sah - B.Tech std in Banglore</p>
                   <div className="text-white/70 text-sm">
                     <span className="font-semibold">John Doe</span> - Software Engineer at Google
                   </div>
