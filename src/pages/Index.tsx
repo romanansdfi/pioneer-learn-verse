@@ -60,13 +60,12 @@ const Index: React.FC = () => {
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4">Courses</h3>
+            <h3 className="text-lg font-semibold mb-4">Subjects</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-300 hover:text-white">Web Development</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white">Data Science</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white">Design</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white">Business</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white">Marketing</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white">Science</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white">Math</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white">English</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white">Nepali</a></li>
             </ul>
           </div>
           
