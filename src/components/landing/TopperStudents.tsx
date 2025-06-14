@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Trophy, Star, Award, ArrowRight, Users, GraduationCap, X, MapPin, Calendar, Medal } from 'lucide-react';
 import ButtonCustom from '../ui/button-custom';
@@ -50,10 +49,10 @@ const topperStudents: Student[] = [
   },
   {
     id: 3,
-    name: "Rahul Kumar",
+    name: "Puja Rouniyar",
     class: "Class 11th Commerce",
-    achievement: "All-Round Excellence Award",
-    description: "Outstanding performance in academics, sports, and cultural activities with 95.5% marks",
+    achievement: "BIT Entrance Topper",
+    description: "Entrance topper at BIT (Bachelor level) with outstanding performance in academics, sports, and cultural activities achieving 95.5% marks",
     score: "95.5%",
     rank: "1st",
     subjects: ["Accountancy", "Business Studies", "Economics", "English"],
