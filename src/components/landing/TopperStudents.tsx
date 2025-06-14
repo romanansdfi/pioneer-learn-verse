@@ -23,13 +23,13 @@ const topperStudents: Student[] = [
   {
     id: 1,
     name: "Binu Chy",
-    class: "Class 12th Science",
+    class: "Class 10",
     achievement: "School Topper & Scholarship Recipient",
     description: "School topper with 98% marks in academy and secured a full scholarship for 11th and 12th grade. Demonstrated exceptional academic excellence and leadership qualities throughout her academic journey.",
     score: "98%",
     rank: "1st",
     subjects: ["Physics", "Chemistry", "Mathematics", "Biology"],
-    image: "/lovable-uploads/beface37-9d6d-4266-bae0-ed482488d7e1.png",
+    image: "/lovable-uploads/f7140c2d-7fbe-4925-a53b-7c934d8c5ce4.png",
     badge: "Academic Excellence",
     icon: <Trophy className="w-6 h-6" />,
     gradient: "from-yellow-500 to-orange-500"
