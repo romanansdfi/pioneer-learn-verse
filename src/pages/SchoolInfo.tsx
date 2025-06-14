@@ -9,6 +9,7 @@ import Navbar from '@/components/navbar/Navbar';
 
 const SchoolInfo: React.FC = () => {
   const [selectedGallery, setSelectedGallery] = useState<string | null>(null);
+  
   const courses = [{
     class: "Class 1-2",
     subjects: ["English", "Mathematics", "Environmental Science", "Nepali", "Art & Craft", "Physical Education"],
@@ -140,8 +141,8 @@ const SchoolInfo: React.FC = () => {
     category: "Campus",
     images: [
       {
-        name: "Main Building",
-        src: "/lovable-uploads/f0aa7b9b-f9e2-45a3-a6e4-b03662546915.png"
+        name: "Pioneer Academy Building",
+        src: "/lovable-uploads/1efc6d56-6bce-456a-ba36-9bf3fd783429.png"
       },
       {
         name: "School Building",
