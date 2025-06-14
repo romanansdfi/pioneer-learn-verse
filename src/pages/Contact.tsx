@@ -4,6 +4,7 @@ import { ArrowLeft, MapPin, Phone, Mail, Clock, GraduationCap, Calendar, Downloa
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import ButtonCustom from '@/components/ui/button-custom';
 import Navbar from '@/components/navbar/Navbar';
+
 const Contact: React.FC = () => {
   return <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
       <Navbar />
@@ -56,10 +57,9 @@ const Contact: React.FC = () => {
                     <div>
                       <h3 className="font-semibold text-lg text-gray-800 mb-2">Address</h3>
                       <p className="text-gray-600 leading-relaxed">
-                        123 Education Street<br />
-                        Knowledge Park, Academic City<br />
-                        State - 123456<br />
-                        India
+                        Phattepur 1 Saptari<br />
+                        Near Patrol Pump<br />
+                        Nepal
                       </p>
                     </div>
                   </div>
@@ -205,4 +205,5 @@ const Contact: React.FC = () => {
       </div>
     </div>;
 };
+
 export default Contact;
