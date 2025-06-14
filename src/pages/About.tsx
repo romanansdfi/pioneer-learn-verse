@@ -8,7 +8,7 @@ import Navbar from '@/components/navbar/Navbar';
 const About: React.FC = () => {
   const leadership = [
     {
-      name: "Dr. Sarah Johnson",
+      name: "Bhupendra Chy",
       position: "Principal",
       qualification: "M.Ed, Ph.D in Education",
       experience: "15+ years",
@@ -16,7 +16,7 @@ const About: React.FC = () => {
       color: "from-blue-500 to-purple-500"
     },
     {
-      name: "Mr. David Wilson",
+      name: "Harinarayan Chy",
       position: "Vice Principal",
       qualification: "M.A. in Educational Administration",
       experience: "12+ years",
