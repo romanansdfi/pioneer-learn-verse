@@ -1,11 +1,8 @@
-
 import React from 'react';
 import { ArrowRight, Play, Star, Users, BookOpen, Award } from 'lucide-react';
 import ButtonCustom from '../ui/button-custom';
-
 const HeroSection: React.FC = () => {
-  return (
-    <section className="relative min-h-screen bg-gradient-to-br from-pioneer-deep-blue via-pioneer-light-blue to-pioneer-green overflow-hidden">
+  return <section className="relative min-h-screen bg-gradient-to-br from-pioneer-deep-blue via-pioneer-light-blue to-pioneer-green overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl animate-pulse"></div>
@@ -48,7 +45,7 @@ const HeroSection: React.FC = () => {
               <div className="flex flex-wrap justify-center lg:justify-start gap-6 mb-8 animate-fade-in">
                 <div className="flex items-center text-white/80">
                   <Users className="w-5 h-5 mr-2 text-yellow-300" />
-                  <span className="font-semibold">50K+ Students</span>
+                  <span className="font-semibold">5k+ Students with A+ grade</span>
                 </div>
                 <div className="flex items-center text-white/80">
                   <BookOpen className="w-5 h-5 mr-2 text-green-300" />
@@ -62,20 +59,11 @@ const HeroSection: React.FC = () => {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in">
-                <ButtonCustom 
-                  size="lg" 
-                  className="bg-white text-pioneer-deep-blue hover:bg-white/90 shadow-2xl transform hover:scale-105 transition-all duration-300 font-semibold px-8 py-4"
-                  rightIcon={<ArrowRight className="w-5 h-5" />}
-                >
+                <ButtonCustom size="lg" className="bg-white text-pioneer-deep-blue hover:bg-white/90 shadow-2xl transform hover:scale-105 transition-all duration-300 font-semibold px-8 py-4" rightIcon={<ArrowRight className="w-5 h-5" />}>
                   Start Learning Now
                 </ButtonCustom>
                 
-                <ButtonCustom 
-                  variant="outline" 
-                  size="lg"
-                  className="border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm shadow-lg font-semibold px-8 py-4"
-                  leftIcon={<Play className="w-5 h-5" />}
-                >
+                <ButtonCustom variant="outline" size="lg" className="border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm shadow-lg font-semibold px-8 py-4" leftIcon={<Play className="w-5 h-5" />}>
                   Watch Demo
                 </ButtonCustom>
               </div>
@@ -98,7 +86,7 @@ const HeroSection: React.FC = () => {
                   <div className="space-y-4">
                     <div>
                       <div className="flex justify-between text-sm text-white/80 mb-2">
-                        <span>Web Development</span>
+                        <span>Mathematics</span>
                         <span>85%</span>
                       </div>
                       <div className="w-full bg-white/20 rounded-full h-2">
@@ -107,7 +95,7 @@ const HeroSection: React.FC = () => {
                     </div>
                     <div>
                       <div className="flex justify-between text-sm text-white/80 mb-2">
-                        <span>Data Science</span>
+                        <span>Science</span>
                         <span>72%</span>
                       </div>
                       <div className="w-full bg-white/20 rounded-full h-2">
@@ -116,7 +104,7 @@ const HeroSection: React.FC = () => {
                     </div>
                     <div>
                       <div className="flex justify-between text-sm text-white/80 mb-2">
-                        <span>Design</span>
+                        <span>Computer</span>
                         <span>90%</span>
                       </div>
                       <div className="w-full bg-white/20 rounded-full h-2">
@@ -154,8 +142,6 @@ const HeroSection: React.FC = () => {
 
       {/* Bottom gradient overlay */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white via-white/50 to-transparent"></div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
