@@ -38,7 +38,7 @@ const topperStudents: Student[] = [
     name: "Rambilas Sah",
     class: "Bachelor's",
     achievement: "National Level Mathematics Finalist",
-    description: "National level mathematics finalist with 97% and secured 4th position in India, currently studying at Bangalore. Achieved 4 GPA in 10th standard.",
+    description: "A National Level Mathematics Finalist, securing 4th position across India with a score of 97%. Currently, I am pursuing my academic journey in Bangalore, with a strong foundation marked by a perfect 4.0 GPA in my 10th standard. These achievements reflect my dedication to academic excellence and a deep passion for mathematics.",
     score: "97%",
     rank: "4th",
     subjects: ["Mathematics", "Science", "Statistics", "Physics"],
