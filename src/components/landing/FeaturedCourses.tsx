@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Clock, Users, Star, ArrowRight, BookOpen, Code, Palette, BarChart } from 'lucide-react';
+import { Clock, Users, Star, ArrowRight, BookOpen, Code, Palette, BarChart, IndianRupee } from 'lucide-react';
 import ButtonCustom from '../ui/button-custom';
 
 interface Course {
@@ -18,6 +18,13 @@ interface Course {
   level: 'Beginner' | 'Intermediate' | 'Advanced';
   icon: React.ReactNode;
   gradient: string;
+  feeStructure: {
+    registrationFee: number;
+    courseFee: number;
+    examFee: number;
+    certificateFee: number;
+    total: number;
+  };
 }
 
 const courses: Course[] = [
@@ -35,7 +42,14 @@ const courses: Course[] = [
     category: "Development",
     level: "Beginner",
     icon: <Code className="w-6 h-6" />,
-    gradient: "from-blue-600 to-purple-600"
+    gradient: "from-blue-600 to-purple-600",
+    feeStructure: {
+      registrationFee: 2500,
+      courseFee: 25000,
+      examFee: 1500,
+      certificateFee: 1000,
+      total: 30000
+    }
   },
   {
     id: 2,
@@ -51,7 +65,14 @@ const courses: Course[] = [
     category: "Data Science",
     level: "Intermediate",
     icon: <BarChart className="w-6 h-6" />,
-    gradient: "from-green-600 to-teal-600"
+    gradient: "from-green-600 to-teal-600",
+    feeStructure: {
+      registrationFee: 3000,
+      courseFee: 35000,
+      examFee: 2000,
+      certificateFee: 1500,
+      total: 41500
+    }
   },
   {
     id: 3,
@@ -67,7 +88,14 @@ const courses: Course[] = [
     category: "Design",
     level: "Beginner",
     icon: <Palette className="w-6 h-6" />,
-    gradient: "from-pink-600 to-rose-600"
+    gradient: "from-pink-600 to-rose-600",
+    feeStructure: {
+      registrationFee: 2000,
+      courseFee: 22000,
+      examFee: 1200,
+      certificateFee: 800,
+      total: 26000
+    }
   }
 ];
 
@@ -155,6 +183,36 @@ const CourseCard: React.FC<{ course: Course }> = ({ course }) => {
           <div className="flex items-center">
             <Star className="w-4 h-4 mr-1 fill-yellow-400 text-yellow-400" />
             <span className="font-semibold">{course.rating}</span>
+          </div>
+        </div>
+
+        {/* Fee Structure */}
+        <div className="mb-4 p-4 bg-gray-50 rounded-lg">
+          <h4 className="text-sm font-semibold text-gray-700 mb-2 flex items-center">
+            <IndianRupee className="w-4 h-4 mr-1" />
+            Fee Structure
+          </h4>
+          <div className="space-y-1 text-xs text-gray-600">
+            <div className="flex justify-between">
+              <span>Registration Fee:</span>
+              <span>₹{course.feeStructure.registrationFee.toLocaleString()}</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Course Fee:</span>
+              <span>₹{course.feeStructure.courseFee.toLocaleString()}</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Exam Fee:</span>
+              <span>₹{course.feeStructure.examFee.toLocaleString()}</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Certificate Fee:</span>
+              <span>₹{course.feeStructure.certificateFee.toLocaleString()}</span>
+            </div>
+            <div className="flex justify-between font-semibold text-pioneer-deep-blue border-t pt-1">
+              <span>Total:</span>
+              <span>₹{course.feeStructure.total.toLocaleString()}</span>
+            </div>
           </div>
         </div>
 
