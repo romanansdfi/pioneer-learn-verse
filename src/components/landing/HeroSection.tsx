@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ArrowRight, Play, Star, Users, BookOpen, Award } from 'lucide-react';
 import ButtonCustom from '../ui/button-custom';
@@ -63,9 +64,11 @@ const HeroSection: React.FC = () => {
                   Start Learning Now
                 </ButtonCustom>
                 
-                <ButtonCustom variant="outline" size="lg" className="border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm shadow-lg font-semibold px-8 py-4" leftIcon={<Play className="w-5 h-5" />}>
-                  Watch Demo
-                </ButtonCustom>
+                <a href="https://www.facebook.com/share/v/1CB1cNLZT7/" target="_blank" rel="noopener noreferrer">
+                  <ButtonCustom variant="outline" size="lg" className="border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm shadow-lg font-semibold px-8 py-4" leftIcon={<Play className="w-5 h-5" />}>
+                    Watch Demo
+                  </ButtonCustom>
+                </a>
               </div>
             </div>
 
