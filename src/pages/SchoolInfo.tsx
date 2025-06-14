@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, BookOpen, Users, Calendar, Trophy, Camera, MapPin, Phone, Mail, Clock, GraduationCap, Award, Star, ChevronRight, Sparkles, Target, Heart } from 'lucide-react';
@@ -377,11 +378,15 @@ const SchoolInfo: React.FC = () => {
               <CardContent className="p-8">
                 <div className="flex flex-col md:flex-row gap-8">
                   <div className="md:w-1/3">
-                    <div className="w-64 h-64 bg-gradient-to-br from-pioneer-deep-blue via-pioneer-light-blue to-pioneer-green rounded-3xl mx-auto flex items-center justify-center shadow-2xl">
-                      <Users className="h-32 w-32 text-white" />
+                    <div className="w-64 h-64 rounded-3xl mx-auto overflow-hidden shadow-2xl">
+                      <img 
+                        src="/lovable-uploads/8b054e9c-2095-4ab3-916a-0e7f2c9da936.png" 
+                        alt="Principal Ramanand Chy" 
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <div className="text-center mt-6">
-                      <h3 className="font-bold text-2xl text-pioneer-deep-blue">Dr. Sarah Johnson</h3>
+                      <h3 className="font-bold text-2xl text-pioneer-deep-blue">Ramanand Chy</h3>
                       <p className="text-pioneer-light-blue font-semibold text-lg">Principal</p>
                       <p className="text-gray-500 text-sm">M.Ed, Ph.D in Education</p>
                     </div>
