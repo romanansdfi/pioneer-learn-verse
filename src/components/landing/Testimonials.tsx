@@ -23,11 +23,11 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 2,
-    name: "Jason Martinez",
+    name: "Asona Rouniyar",
     role: "Data Scientist",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=120&h=120&q=60",
+    initials: "AR",
     rating: 5,
-    text: "The data science curriculum is top-notch and constantly updated with the latest industry trends. The instructors are extremely knowledgeable and always available to help with questions."
+    text: "The courses are really good and always kept up-to-date with what's happening in the real world. The teachers know a lot and are always ready to help if we have any doubts."
   },
   {
     id: 3,
