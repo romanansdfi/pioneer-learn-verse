@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, BookOpen, Users, Calendar, Trophy, Camera, MapPin, Phone, Mail, Clock, GraduationCap, Award, Star, ChevronRight } from 'lucide-react';
+import { ArrowLeft, BookOpen, Users, Calendar, Trophy, Camera, MapPin, Phone, Mail, Clock, GraduationCap, Award, Star, ChevronRight, Sparkles, Target, Heart } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -12,60 +12,83 @@ const SchoolInfo: React.FC = () => {
   const [selectedGallery, setSelectedGallery] = useState<string | null>(null);
 
   const courses = [
-    { class: "Class 1-2", subjects: ["English", "Mathematics", "Environmental Science", "Hindi", "Art & Craft", "Physical Education"] },
-    { class: "Class 3-5", subjects: ["English", "Mathematics", "Environmental Science", "Hindi", "Computer Science", "Art & Craft", "Physical Education"] },
-    { class: "Class 6-8", subjects: ["English", "Mathematics", "Science", "Social Science", "Hindi", "Computer Science", "Art & Craft", "Physical Education"] },
-    { class: "Class 9-10", subjects: ["English", "Mathematics", "Science", "Social Science", "Hindi", "Computer Applications", "Physical Education"] }
+    { class: "Class 1-2", subjects: ["English", "Mathematics", "Environmental Science", "Hindi", "Art & Craft", "Physical Education"], color: "from-pink-500 to-rose-500" },
+    { class: "Class 3-5", subjects: ["English", "Mathematics", "Environmental Science", "Hindi", "Computer Science", "Art & Craft", "Physical Education"], color: "from-purple-500 to-indigo-500" },
+    { class: "Class 6-8", subjects: ["English", "Mathematics", "Science", "Social Science", "Hindi", "Computer Science", "Art & Craft", "Physical Education"], color: "from-blue-500 to-cyan-500" },
+    { class: "Class 9-10", subjects: ["English", "Mathematics", "Science", "Social Science", "Hindi", "Computer Applications", "Physical Education"], color: "from-emerald-500 to-teal-500" }
   ];
 
   const sports = [
-    { name: "Cricket", achievements: "District Champions 2023", icon: "🏏" },
-    { name: "Basketball", achievements: "State Runners-up 2023", icon: "🏀" },
-    { name: "Football", achievements: "Regional Champions 2022", icon: "⚽" },
-    { name: "Table Tennis", achievements: "Inter-school Winners 2023", icon: "🏓" },
-    { name: "Swimming", achievements: "City Champions 2023", icon: "🏊" },
-    { name: "Athletics", achievements: "Multiple State Records", icon: "🏃" }
+    { name: "Cricket", achievements: "District Champions 2023", icon: "🏏", color: "from-orange-400 to-red-500" },
+    { name: "Basketball", achievements: "State Runners-up 2023", icon: "🏀", color: "from-blue-400 to-purple-500" },
+    { name: "Football", achievements: "Regional Champions 2022", icon: "⚽", color: "from-green-400 to-emerald-500" },
+    { name: "Table Tennis", achievements: "Inter-school Winners 2023", icon: "🏓", color: "from-yellow-400 to-orange-500" },
+    { name: "Swimming", achievements: "City Champions 2023", icon: "🏊", color: "from-cyan-400 to-blue-500" },
+    { name: "Athletics", achievements: "Multiple State Records", icon: "🏃", color: "from-pink-400 to-rose-500" }
   ];
 
   const activities = [
-    { name: "Science Club", day: "Monday", time: "3:30 PM - 4:30 PM" },
-    { name: "Art & Craft", day: "Tuesday", time: "3:30 PM - 4:30 PM" },
-    { name: "Music Club", day: "Wednesday", time: "3:30 PM - 4:30 PM" },
-    { name: "Dance Club", day: "Thursday", time: "3:30 PM - 4:30 PM" },
-    { name: "Drama Club", day: "Friday", time: "3:30 PM - 4:30 PM" },
-    { name: "Debate Society", day: "Saturday", time: "10:00 AM - 11:00 AM" }
+    { name: "Science Club", day: "Monday", time: "3:30 PM - 4:30 PM", icon: "🔬", color: "from-blue-400 to-indigo-500" },
+    { name: "Art & Craft", day: "Tuesday", time: "3:30 PM - 4:30 PM", icon: "🎨", color: "from-pink-400 to-purple-500" },
+    { name: "Music Club", day: "Wednesday", time: "3:30 PM - 4:30 PM", icon: "🎵", color: "from-green-400 to-teal-500" },
+    { name: "Dance Club", day: "Thursday", time: "3:30 PM - 4:30 PM", icon: "💃", color: "from-yellow-400 to-orange-500" },
+    { name: "Drama Club", day: "Friday", time: "3:30 PM - 4:30 PM", icon: "🎭", color: "from-red-400 to-pink-500" },
+    { name: "Debate Society", day: "Saturday", time: "10:00 AM - 11:00 AM", icon: "🗣️", color: "from-purple-400 to-indigo-500" }
   ];
 
   const events = [
-    { name: "Annual Day Celebration", date: "2024-03-15", type: "Cultural" },
-    { name: "Science Exhibition", date: "2024-02-20", type: "Academic" },
-    { name: "Sports Day", date: "2024-01-25", type: "Sports" },
-    { name: "Parent-Teacher Meeting", date: "2024-04-10", type: "Meeting" }
+    { name: "Annual Day Celebration", date: "2024-03-15", type: "Cultural", color: "from-purple-500 to-pink-500" },
+    { name: "Science Exhibition", date: "2024-02-20", type: "Academic", color: "from-blue-500 to-cyan-500" },
+    { name: "Sports Day", date: "2024-01-25", type: "Sports", color: "from-green-500 to-emerald-500" },
+    { name: "Parent-Teacher Meeting", date: "2024-04-10", type: "Meeting", color: "from-orange-500 to-red-500" }
   ];
 
   const galleryImages = [
-    { category: "Events", images: ["Annual Day 2023", "Science Fair", "Sports Day", "Cultural Program"] },
-    { category: "Campus", images: ["Main Building", "Library", "Computer Lab", "Playground"] },
-    { category: "Activities", images: ["Art Class", "Music Room", "Dance Performance", "Drama Club"] }
+    { category: "Events", images: ["Annual Day 2023", "Science Fair", "Sports Day", "Cultural Program"], color: "from-purple-500 to-indigo-500" },
+    { category: "Campus", images: ["Main Building", "Library", "Computer Lab", "Playground"], color: "from-blue-500 to-cyan-500" },
+    { category: "Activities", images: ["Art Class", "Music Room", "Dance Performance", "Drama Club"], color: "from-green-500 to-teal-500" }
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
       <Navbar />
       
-      {/* Header Section */}
-      <div className="pt-20 pb-8 bg-gradient-to-br from-pioneer-deep-blue to-pioneer-light-blue text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link to="/" className="inline-flex items-center text-white/80 hover:text-white mb-6 transition-colors">
-            <ArrowLeft className="h-5 w-5 mr-2" />
+      {/* Enhanced Header Section */}
+      <div className="relative pt-20 pb-16 overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 bg-gradient-to-br from-pioneer-deep-blue via-pioneer-light-blue to-pioneer-green opacity-90"></div>
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="3"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Link to="/" className="inline-flex items-center text-white/80 hover:text-white mb-8 transition-all duration-300 hover:scale-105 group">
+            <ArrowLeft className="h-5 w-5 mr-2 group-hover:-translate-x-1 transition-transform" />
             Back to Home
           </Link>
           
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Pioneer Academy</h1>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
+            <div className="inline-flex items-center justify-center p-3 bg-white/10 backdrop-blur-sm rounded-full mb-6 animate-bounce-slow">
+              <GraduationCap className="h-12 w-12 text-white" />
+            </div>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white animate-fade-in">
+              Pioneer Academy
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed animate-fade-in animation-delay-200">
               Nurturing Excellence, Building Character, Shaping Future Leaders
             </p>
+            <div className="flex justify-center mt-8 space-x-4 animate-fade-in animation-delay-400">
+              <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+                <Star className="h-5 w-5 text-yellow-300" />
+                <span className="text-white font-medium">Excellence</span>
+              </div>
+              <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+                <Heart className="h-5 w-5 text-red-300" />
+                <span className="text-white font-medium">Character</span>
+              </div>
+              <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+                <Target className="h-5 w-5 text-green-300" />
+                <span className="text-white font-medium">Leadership</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -73,30 +96,32 @@ const SchoolInfo: React.FC = () => {
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <Tabs defaultValue="welcome" className="w-full">
-          <TabsList className="grid w-full grid-cols-4 md:grid-cols-9 lg:grid-cols-9 mb-8">
-            <TabsTrigger value="welcome">Welcome</TabsTrigger>
-            <TabsTrigger value="courses">Courses</TabsTrigger>
-            <TabsTrigger value="principal">Principal</TabsTrigger>
-            <TabsTrigger value="sports">Sports</TabsTrigger>
-            <TabsTrigger value="activities">Activities</TabsTrigger>
-            <TabsTrigger value="gallery">Gallery</TabsTrigger>
-            <TabsTrigger value="events">Events</TabsTrigger>
-            <TabsTrigger value="student-zone">Students</TabsTrigger>
-            <TabsTrigger value="contact">Contact</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-4 md:grid-cols-9 lg:grid-cols-9 mb-12 bg-white/50 backdrop-blur-sm border-0 shadow-lg rounded-2xl p-2">
+            <TabsTrigger value="welcome" className="rounded-xl font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-pioneer-deep-blue data-[state=active]:to-pioneer-light-blue data-[state=active]:text-white">Welcome</TabsTrigger>
+            <TabsTrigger value="courses" className="rounded-xl font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-pioneer-deep-blue data-[state=active]:to-pioneer-light-blue data-[state=active]:text-white">Courses</TabsTrigger>
+            <TabsTrigger value="principal" className="rounded-xl font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-pioneer-deep-blue data-[state=active]:to-pioneer-light-blue data-[state=active]:text-white">Principal</TabsTrigger>
+            <TabsTrigger value="sports" className="rounded-xl font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-pioneer-deep-blue data-[state=active]:to-pioneer-light-blue data-[state=active]:text-white">Sports</TabsTrigger>
+            <TabsTrigger value="activities" className="rounded-xl font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-pioneer-deep-blue data-[state=active]:to-pioneer-light-blue data-[state=active]:text-white">Activities</TabsTrigger>
+            <TabsTrigger value="gallery" className="rounded-xl font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-pioneer-deep-blue data-[state=active]:to-pioneer-light-blue data-[state=active]:text-white">Gallery</TabsTrigger>
+            <TabsTrigger value="events" className="rounded-xl font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-pioneer-deep-blue data-[state=active]:to-pioneer-light-blue data-[state=active]:text-white">Events</TabsTrigger>
+            <TabsTrigger value="student-zone" className="rounded-xl font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-pioneer-deep-blue data-[state=active]:to-pioneer-light-blue data-[state=active]:text-white">Students</TabsTrigger>
+            <TabsTrigger value="contact" className="rounded-xl font-semibold data-[state=active]:bg-gradient-to-r data-[state=active]:from-pioneer-deep-blue data-[state=active]:to-pioneer-light-blue data-[state=active]:text-white">Contact</TabsTrigger>
           </TabsList>
 
           {/* Welcome Tab */}
-          <TabsContent value="welcome">
+          <TabsContent value="welcome" className="space-y-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <GraduationCap className="h-6 w-6 text-pioneer-deep-blue" />
+              <Card className="card-hover bg-gradient-to-br from-white to-blue-50 border-0 shadow-xl rounded-3xl overflow-hidden">
+                <CardHeader className="bg-gradient-to-r from-pioneer-deep-blue to-pioneer-light-blue text-white rounded-t-3xl">
+                  <CardTitle className="flex items-center gap-3 text-2xl">
+                    <div className="p-2 bg-white/20 rounded-full">
+                      <GraduationCap className="h-8 w-8" />
+                    </div>
                     Our Mission
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-gray-700 leading-relaxed">
+                <CardContent className="p-8">
+                  <p className="text-gray-700 leading-relaxed text-lg">
                     At Pioneer Academy, we are committed to providing quality education that nurtures young minds, 
                     builds character, and prepares students for a successful future. Our holistic approach ensures 
                     academic excellence while fostering creativity, critical thinking, and leadership skills.
@@ -104,56 +129,90 @@ const SchoolInfo: React.FC = () => {
                 </CardContent>
               </Card>
 
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Star className="h-6 w-6 text-pioneer-green" />
+              <Card className="card-hover bg-gradient-to-br from-white to-green-50 border-0 shadow-xl rounded-3xl overflow-hidden">
+                <CardHeader className="bg-gradient-to-r from-pioneer-green to-emerald-500 text-white rounded-t-3xl">
+                  <CardTitle className="flex items-center gap-3 text-2xl">
+                    <div className="p-2 bg-white/20 rounded-full">
+                      <Star className="h-8 w-8" />
+                    </div>
                     Our Values
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-gray-700">
-                    <li className="flex items-center gap-2">
-                      <ChevronRight className="h-4 w-4 text-pioneer-light-blue" />
-                      Excellence in Education
+                <CardContent className="p-8">
+                  <ul className="space-y-4 text-gray-700">
+                    <li className="flex items-center gap-3 group">
+                      <div className="p-2 bg-gradient-to-r from-pioneer-light-blue to-pioneer-green rounded-full group-hover:scale-110 transition-transform">
+                        <ChevronRight className="h-4 w-4 text-white" />
+                      </div>
+                      <span className="text-lg font-medium">Excellence in Education</span>
                     </li>
-                    <li className="flex items-center gap-2">
-                      <ChevronRight className="h-4 w-4 text-pioneer-light-blue" />
-                      Character Development
+                    <li className="flex items-center gap-3 group">
+                      <div className="p-2 bg-gradient-to-r from-pioneer-light-blue to-pioneer-green rounded-full group-hover:scale-110 transition-transform">
+                        <ChevronRight className="h-4 w-4 text-white" />
+                      </div>
+                      <span className="text-lg font-medium">Character Development</span>
                     </li>
-                    <li className="flex items-center gap-2">
-                      <ChevronRight className="h-4 w-4 text-pioneer-light-blue" />
-                      Innovation & Creativity
+                    <li className="flex items-center gap-3 group">
+                      <div className="p-2 bg-gradient-to-r from-pioneer-light-blue to-pioneer-green rounded-full group-hover:scale-110 transition-transform">
+                        <ChevronRight className="h-4 w-4 text-white" />
+                      </div>
+                      <span className="text-lg font-medium">Innovation & Creativity</span>
                     </li>
-                    <li className="flex items-center gap-2">
-                      <ChevronRight className="h-4 w-4 text-pioneer-light-blue" />
-                      Community Service
+                    <li className="flex items-center gap-3 group">
+                      <div className="p-2 bg-gradient-to-r from-pioneer-light-blue to-pioneer-green rounded-full group-hover:scale-110 transition-transform">
+                        <ChevronRight className="h-4 w-4 text-white" />
+                      </div>
+                      <span className="text-lg font-medium">Community Service</span>
                     </li>
                   </ul>
                 </CardContent>
               </Card>
             </div>
 
-            <Card className="mt-8">
-              <CardHeader>
-                <CardTitle>Why Choose Pioneer Academy?</CardTitle>
+            <Card className="card-hover bg-gradient-to-r from-white via-blue-50 to-purple-50 border-0 shadow-xl rounded-3xl overflow-hidden">
+              <CardHeader className="text-center pb-2">
+                <CardTitle className="text-3xl font-bold text-gradient-primary flex items-center justify-center gap-3">
+                  <Sparkles className="h-8 w-8 text-pioneer-deep-blue" />
+                  Why Choose Pioneer Academy?
+                </CardTitle>
               </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="text-center">
-                    <Award className="h-12 w-12 text-pioneer-deep-blue mx-auto mb-4" />
-                    <h3 className="font-semibold text-lg mb-2">CBSE Affiliated</h3>
-                    <p className="text-gray-600">Recognized curriculum following national standards</p>
+              <CardContent className="p-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div className="text-center group">
+                    <div className="relative mb-6">
+                      <div className="w-24 h-24 bg-gradient-to-br from-pioneer-deep-blue to-pioneer-light-blue rounded-full mx-auto flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                        <Award className="h-12 w-12 text-white" />
+                      </div>
+                      <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
+                        <Star className="h-4 w-4 text-white" />
+                      </div>
+                    </div>
+                    <h3 className="font-bold text-xl mb-3 text-pioneer-deep-blue">CBSE Affiliated</h3>
+                    <p className="text-gray-600 leading-relaxed">Recognized curriculum following national standards</p>
                   </div>
-                  <div className="text-center">
-                    <Users className="h-12 w-12 text-pioneer-light-blue mx-auto mb-4" />
-                    <h3 className="font-semibold text-lg mb-2">Expert Faculty</h3>
-                    <p className="text-gray-600">Qualified and experienced teaching staff</p>
+                  <div className="text-center group">
+                    <div className="relative mb-6">
+                      <div className="w-24 h-24 bg-gradient-to-br from-pioneer-light-blue to-pioneer-green rounded-full mx-auto flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                        <Users className="h-12 w-12 text-white" />
+                      </div>
+                      <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full flex items-center justify-center">
+                        <Star className="h-4 w-4 text-white" />
+                      </div>
+                    </div>
+                    <h3 className="font-bold text-xl mb-3 text-pioneer-light-blue">Expert Faculty</h3>
+                    <p className="text-gray-600 leading-relaxed">Qualified and experienced teaching staff</p>
                   </div>
-                  <div className="text-center">
-                    <BookOpen className="h-12 w-12 text-pioneer-green mx-auto mb-4" />
-                    <h3 className="font-semibold text-lg mb-2">Modern Facilities</h3>
-                    <p className="text-gray-600">State-of-the-art infrastructure and resources</p>
+                  <div className="text-center group">
+                    <div className="relative mb-6">
+                      <div className="w-24 h-24 bg-gradient-to-br from-pioneer-green to-emerald-500 rounded-full mx-auto flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                        <BookOpen className="h-12 w-12 text-white" />
+                      </div>
+                      <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center">
+                        <Star className="h-4 w-4 text-white" />
+                      </div>
+                    </div>
+                    <h3 className="font-bold text-xl mb-3 text-pioneer-green">Modern Facilities</h3>
+                    <p className="text-gray-600 leading-relaxed">State-of-the-art infrastructure and resources</p>
                   </div>
                 </div>
               </CardContent>
@@ -162,17 +221,17 @@ const SchoolInfo: React.FC = () => {
 
           {/* Courses Tab */}
           <TabsContent value="courses">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {courses.map((course, index) => (
-                <Card key={index}>
-                  <CardHeader>
-                    <CardTitle className="text-pioneer-deep-blue">{course.class}</CardTitle>
-                    <CardDescription>CBSE Curriculum</CardDescription>
+                <Card key={index} className="card-hover border-0 shadow-xl rounded-3xl overflow-hidden">
+                  <CardHeader className={`bg-gradient-to-r ${course.color} text-white rounded-t-3xl`}>
+                    <CardTitle className="text-2xl font-bold">{course.class}</CardTitle>
+                    <CardDescription className="text-white/80 text-lg">CBSE Curriculum</CardDescription>
                   </CardHeader>
-                  <CardContent>
-                    <div className="flex flex-wrap gap-2">
+                  <CardContent className="p-8 bg-gradient-to-br from-white to-gray-50">
+                    <div className="flex flex-wrap gap-3">
                       {course.subjects.map((subject, idx) => (
-                        <Badge key={idx} variant="secondary" className="bg-pioneer-light-blue/10 text-pioneer-deep-blue">
+                        <Badge key={idx} className="px-4 py-2 text-sm font-medium bg-white/80 text-gray-700 hover:bg-white transition-colors rounded-full shadow-md">
                           {subject}
                         </Badge>
                       ))}
@@ -185,37 +244,43 @@ const SchoolInfo: React.FC = () => {
 
           {/* Principal Tab */}
           <TabsContent value="principal">
-            <Card>
-              <CardHeader>
-                <CardTitle>Message from the Principal</CardTitle>
+            <Card className="card-hover border-0 shadow-xl rounded-3xl overflow-hidden bg-gradient-to-br from-white to-blue-50">
+              <CardHeader className="bg-gradient-to-r from-pioneer-deep-blue to-pioneer-light-blue text-white rounded-t-3xl">
+                <CardTitle className="text-3xl font-bold">Message from the Principal</CardTitle>
               </CardHeader>
-              <CardContent>
-                <div className="flex flex-col md:flex-row gap-6">
+              <CardContent className="p-8">
+                <div className="flex flex-col md:flex-row gap-8">
                   <div className="md:w-1/3">
-                    <div className="w-48 h-48 bg-gradient-to-br from-pioneer-deep-blue to-pioneer-light-blue rounded-lg mx-auto flex items-center justify-center">
-                      <Users className="h-24 w-24 text-white" />
+                    <div className="w-64 h-64 bg-gradient-to-br from-pioneer-deep-blue via-pioneer-light-blue to-pioneer-green rounded-3xl mx-auto flex items-center justify-center shadow-2xl">
+                      <Users className="h-32 w-32 text-white" />
                     </div>
-                    <div className="text-center mt-4">
-                      <h3 className="font-semibold text-lg">Dr. Sarah Johnson</h3>
-                      <p className="text-gray-600">Principal</p>
-                      <p className="text-sm text-gray-500">M.Ed, Ph.D in Education</p>
+                    <div className="text-center mt-6">
+                      <h3 className="font-bold text-2xl text-pioneer-deep-blue">Dr. Sarah Johnson</h3>
+                      <p className="text-pioneer-light-blue font-semibold text-lg">Principal</p>
+                      <p className="text-gray-500 text-sm">M.Ed, Ph.D in Education</p>
                     </div>
                   </div>
-                  <div className="md:w-2/3">
-                    <p className="text-gray-700 leading-relaxed mb-4">
-                      "Welcome to Pioneer Academy, where we believe every child has the potential to achieve greatness. 
-                      Our dedicated team of educators works tirelessly to create an environment that fosters learning, 
-                      creativity, and personal growth."
-                    </p>
-                    <p className="text-gray-700 leading-relaxed mb-4">
-                      "With over 15 years of experience in education, I am committed to ensuring that our students 
-                      receive the best possible education while developing the values and skills necessary for success 
-                      in the 21st century."
-                    </p>
-                    <p className="text-gray-700 leading-relaxed">
-                      "We invite you to join our Pioneer Academy family and embark on an exciting journey of 
-                      discovery and learning."
-                    </p>
+                  <div className="md:w-2/3 space-y-6">
+                    <div className="p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl border-l-4 border-pioneer-light-blue">
+                      <p className="text-gray-700 leading-relaxed text-lg">
+                        "Welcome to Pioneer Academy, where we believe every child has the potential to achieve greatness. 
+                        Our dedicated team of educators works tirelessly to create an environment that fosters learning, 
+                        creativity, and personal growth."
+                      </p>
+                    </div>
+                    <div className="p-6 bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl border-l-4 border-pioneer-green">
+                      <p className="text-gray-700 leading-relaxed text-lg">
+                        "With over 15 years of experience in education, I am committed to ensuring that our students 
+                        receive the best possible education while developing the values and skills necessary for success 
+                        in the 21st century."
+                      </p>
+                    </div>
+                    <div className="p-6 bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl border-l-4 border-purple-500">
+                      <p className="text-gray-700 leading-relaxed text-lg">
+                        "We invite you to join our Pioneer Academy family and embark on an exciting journey of 
+                        discovery and learning."
+                      </p>
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -226,17 +291,19 @@ const SchoolInfo: React.FC = () => {
           <TabsContent value="sports">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {sports.map((sport, index) => (
-                <Card key={index}>
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-3">
-                      <span className="text-2xl">{sport.icon}</span>
+                <Card key={index} className="card-hover border-0 shadow-xl rounded-3xl overflow-hidden">
+                  <CardHeader className={`bg-gradient-to-r ${sport.color} text-white rounded-t-3xl`}>
+                    <CardTitle className="flex items-center gap-3 text-xl">
+                      <span className="text-3xl">{sport.icon}</span>
                       {sport.name}
                     </CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <div className="flex items-center gap-2">
-                      <Trophy className="h-5 w-5 text-pioneer-green" />
-                      <span className="text-sm text-gray-600">{sport.achievements}</span>
+                  <CardContent className="p-6 bg-gradient-to-br from-white to-gray-50">
+                    <div className="flex items-center gap-3">
+                      <div className="p-2 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full">
+                        <Trophy className="h-5 w-5 text-white" />
+                      </div>
+                      <span className="text-sm text-gray-600 font-medium">{sport.achievements}</span>
                     </div>
                   </CardContent>
                 </Card>
@@ -248,19 +315,26 @@ const SchoolInfo: React.FC = () => {
           <TabsContent value="activities">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {activities.map((activity, index) => (
-                <Card key={index}>
-                  <CardHeader>
-                    <CardTitle>{activity.name}</CardTitle>
+                <Card key={index} className="card-hover border-0 shadow-xl rounded-3xl overflow-hidden">
+                  <CardHeader className={`bg-gradient-to-r ${activity.color} text-white rounded-t-3xl`}>
+                    <CardTitle className="flex items-center gap-3 text-xl">
+                      <span className="text-2xl">{activity.icon}</span>
+                      {activity.name}
+                    </CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2">
-                        <Calendar className="h-4 w-4 text-pioneer-light-blue" />
-                        <span className="text-sm">{activity.day}</span>
+                  <CardContent className="p-6 bg-gradient-to-br from-white to-gray-50">
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-3">
+                        <div className="p-2 bg-gradient-to-r from-pioneer-light-blue to-pioneer-green rounded-full">
+                          <Calendar className="h-4 w-4 text-white" />
+                        </div>
+                        <span className="font-medium">{activity.day}</span>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <Clock className="h-4 w-4 text-pioneer-green" />
-                        <span className="text-sm">{activity.time}</span>
+                      <div className="flex items-center gap-3">
+                        <div className="p-2 bg-gradient-to-r from-pioneer-green to-emerald-500 rounded-full">
+                          <Clock className="h-4 w-4 text-white" />
+                        </div>
+                        <span className="font-medium">{activity.time}</span>
                       </div>
                     </div>
                   </CardContent>
@@ -271,26 +345,30 @@ const SchoolInfo: React.FC = () => {
 
           {/* Gallery Tab */}
           <TabsContent value="gallery">
-            <div className="space-y-6">
+            <div className="space-y-8">
               {galleryImages.map((category, index) => (
-                <Card key={index}>
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                      <Camera className="h-5 w-5 text-pioneer-deep-blue" />
+                <Card key={index} className="card-hover border-0 shadow-xl rounded-3xl overflow-hidden">
+                  <CardHeader className={`bg-gradient-to-r ${category.color} text-white rounded-t-3xl`}>
+                    <CardTitle className="flex items-center gap-3 text-2xl">
+                      <div className="p-2 bg-white/20 rounded-full">
+                        <Camera className="h-6 w-6" />
+                      </div>
                       {category.category}
                     </CardTitle>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="p-8 bg-gradient-to-br from-white to-gray-50">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                       {category.images.map((image, idx) => (
                         <div 
                           key={idx}
-                          className="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center cursor-pointer hover:shadow-lg transition-shadow"
+                          className="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-300 group"
                           onClick={() => setSelectedGallery(image)}
                         >
                           <div className="text-center p-4">
-                            <Camera className="h-8 w-8 text-gray-400 mx-auto mb-2" />
-                            <p className="text-xs text-gray-600">{image}</p>
+                            <div className="p-3 bg-white/60 rounded-full mb-3 group-hover:bg-white/80 transition-colors">
+                              <Camera className="h-8 w-8 text-gray-600" />
+                            </div>
+                            <p className="text-sm text-gray-700 font-medium">{image}</p>
                           </div>
                         </div>
                       ))}
@@ -305,18 +383,24 @@ const SchoolInfo: React.FC = () => {
           <TabsContent value="events">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {events.map((event, index) => (
-                <Card key={index}>
-                  <CardHeader>
-                    <CardTitle>{event.name}</CardTitle>
-                    <CardDescription>
-                      <Badge variant="outline" className="mr-2">{event.type}</Badge>
-                      {new Date(event.date).toLocaleDateString()}
+                <Card key={index} className="card-hover border-0 shadow-xl rounded-3xl overflow-hidden">
+                  <CardHeader className={`bg-gradient-to-r ${event.color} text-white rounded-t-3xl`}>
+                    <CardTitle className="text-xl">{event.name}</CardTitle>
+                    <CardDescription className="text-white/80">
+                      <div className="flex items-center gap-3 mt-2">
+                        <Badge className="bg-white/20 text-white border-white/30 hover:bg-white/30">
+                          {event.type}
+                        </Badge>
+                        <span className="font-medium">{new Date(event.date).toLocaleDateString()}</span>
+                      </div>
                     </CardDescription>
                   </CardHeader>
-                  <CardContent>
-                    <div className="flex items-center gap-2">
-                      <Calendar className="h-4 w-4 text-pioneer-light-blue" />
-                      <span className="text-sm text-gray-600">Mark your calendar</span>
+                  <CardContent className="p-6 bg-gradient-to-br from-white to-gray-50">
+                    <div className="flex items-center gap-3">
+                      <div className="p-2 bg-gradient-to-r from-pioneer-light-blue to-pioneer-green rounded-full">
+                        <Calendar className="h-4 w-4 text-white" />
+                      </div>
+                      <span className="text-gray-600 font-medium">Mark your calendar</span>
                     </div>
                   </CardContent>
                 </Card>
@@ -327,53 +411,70 @@ const SchoolInfo: React.FC = () => {
           {/* Student Zone Tab */}
           <TabsContent value="student-zone">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Student Portal</CardTitle>
-                  <CardDescription>Access your academic information</CardDescription>
+              <Card className="card-hover border-0 shadow-xl rounded-3xl overflow-hidden">
+                <CardHeader className="bg-gradient-to-r from-pioneer-deep-blue to-pioneer-light-blue text-white rounded-t-3xl">
+                  <CardTitle className="text-2xl">Student Portal</CardTitle>
+                  <CardDescription className="text-white/80 text-lg">Access your academic information</CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div className="p-4 bg-pioneer-light-blue/10 rounded-lg">
-                      <h4 className="font-semibold mb-2">Features Available:</h4>
-                      <ul className="space-y-1 text-sm text-gray-600">
-                        <li>• View Grades and Report Cards</li>
-                        <li>• Check Attendance Records</li>
-                        <li>• Access Assignment Submissions</li>
-                        <li>• Download Study Materials</li>
-                        <li>• View School Announcements</li>
+                <CardContent className="p-8 bg-gradient-to-br from-white to-blue-50">
+                  <div className="space-y-6">
+                    <div className="p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl border border-blue-100">
+                      <h4 className="font-bold mb-4 text-pioneer-deep-blue text-lg">Features Available:</h4>
+                      <ul className="space-y-3 text-gray-700">
+                        <li className="flex items-center gap-3">
+                          <div className="w-2 h-2 bg-gradient-to-r from-pioneer-light-blue to-pioneer-green rounded-full"></div>
+                          View Grades and Report Cards
+                        </li>
+                        <li className="flex items-center gap-3">
+                          <div className="w-2 h-2 bg-gradient-to-r from-pioneer-light-blue to-pioneer-green rounded-full"></div>
+                          Check Attendance Records
+                        </li>
+                        <li className="flex items-center gap-3">
+                          <div className="w-2 h-2 bg-gradient-to-r from-pioneer-light-blue to-pioneer-green rounded-full"></div>
+                          Access Assignment Submissions
+                        </li>
+                        <li className="flex items-center gap-3">
+                          <div className="w-2 h-2 bg-gradient-to-r from-pioneer-light-blue to-pioneer-green rounded-full"></div>
+                          Download Study Materials
+                        </li>
+                        <li className="flex items-center gap-3">
+                          <div className="w-2 h-2 bg-gradient-to-r from-pioneer-light-blue to-pioneer-green rounded-full"></div>
+                          View School Announcements
+                        </li>
                       </ul>
                     </div>
-                    <ButtonCustom variant="primary" fullWidth>
+                    <ButtonCustom variant="primary" fullWidth className="bg-gradient-to-r from-pioneer-deep-blue to-pioneer-light-blue hover:shadow-xl hover:scale-105 transition-all duration-300 py-4 text-lg font-semibold rounded-2xl">
                       Access Student Portal
                     </ButtonCustom>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card>
-                <CardHeader>
-                  <CardTitle>Academic Resources</CardTitle>
-                  <CardDescription>Learning materials and support</CardDescription>
+              <Card className="card-hover border-0 shadow-xl rounded-3xl overflow-hidden">
+                <CardHeader className="bg-gradient-to-r from-pioneer-green to-emerald-500 text-white rounded-t-3xl">
+                  <CardTitle className="text-2xl">Academic Resources</CardTitle>
+                  <CardDescription className="text-white/80 text-lg">Learning materials and support</CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                      <span className="text-sm">Digital Library</span>
-                      <ButtonCustom variant="outline" size="sm">Access</ButtonCustom>
-                    </div>
-                    <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                      <span className="text-sm">Online Assignments</span>
-                      <ButtonCustom variant="outline" size="sm">View</ButtonCustom>
-                    </div>
-                    <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                      <span className="text-sm">Study Materials</span>
-                      <ButtonCustom variant="outline" size="sm">Download</ButtonCustom>
-                    </div>
-                    <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                      <span className="text-sm">Virtual Classroom</span>
-                      <ButtonCustom variant="outline" size="sm">Join</ButtonCustom>
-                    </div>
+                <CardContent className="p-8 bg-gradient-to-br from-white to-green-50">
+                  <div className="space-y-4">
+                    {[
+                      { name: "Digital Library", icon: BookOpen },
+                      { name: "Online Assignments", icon: Users },
+                      { name: "Study Materials", icon: BookOpen },
+                      { name: "Virtual Classroom", icon: Users }
+                    ].map((resource, idx) => (
+                      <div key={idx} className="flex items-center justify-between p-4 bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl border border-green-100 group hover:shadow-lg transition-all duration-300">
+                        <div className="flex items-center gap-3">
+                          <div className="p-2 bg-gradient-to-r from-pioneer-green to-emerald-500 rounded-full group-hover:scale-110 transition-transform">
+                            <resource.icon className="h-4 w-4 text-white" />
+                          </div>
+                          <span className="font-medium text-gray-700">{resource.name}</span>
+                        </div>
+                        <ButtonCustom variant="outline" size="sm" className="hover:bg-gradient-to-r hover:from-pioneer-green hover:to-emerald-500 hover:text-white transition-all duration-300 rounded-xl">
+                          {idx === 0 ? "Access" : idx === 1 ? "View" : idx === 2 ? "Download" : "Join"}
+                        </ButtonCustom>
+                      </div>
+                    ))}
                   </div>
                 </CardContent>
               </Card>
@@ -383,81 +484,69 @@ const SchoolInfo: React.FC = () => {
           {/* Contact Tab */}
           <TabsContent value="contact">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Contact Information</CardTitle>
+              <Card className="card-hover border-0 shadow-xl rounded-3xl overflow-hidden">
+                <CardHeader className="bg-gradient-to-r from-pioneer-deep-blue to-pioneer-light-blue text-white rounded-t-3xl">
+                  <CardTitle className="text-2xl">Contact Information</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <MapPin className="h-5 w-5 text-pioneer-deep-blue" />
-                    <div>
-                      <p className="font-medium">Address</p>
-                      <p className="text-sm text-gray-600">123 Education Street, Learning City, LC 12345</p>
+                <CardContent className="p-8 bg-gradient-to-br from-white to-blue-50 space-y-6">
+                  {[
+                    { icon: MapPin, title: "Address", content: "123 Education Street, Learning City, LC 12345", color: "from-blue-500 to-purple-500" },
+                    { icon: Phone, title: "Phone", content: "+1 (555) 123-4567", color: "from-green-500 to-emerald-500" },
+                    { icon: Mail, title: "Email", content: "info@pioneeracademy.edu", color: "from-purple-500 to-pink-500" },
+                    { icon: Clock, title: "Office Hours", content: "Monday - Friday: 8:00 AM - 4:00 PM", color: "from-orange-500 to-red-500" }
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex items-start gap-4 p-4 bg-white/50 rounded-2xl border border-blue-100">
+                      <div className={`p-3 bg-gradient-to-r ${item.color} rounded-full`}>
+                        <item.icon className="h-6 w-6 text-white" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-gray-800 mb-1">{item.title}</p>
+                        <p className="text-gray-600">{item.content}</p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Phone className="h-5 w-5 text-pioneer-light-blue" />
-                    <div>
-                      <p className="font-medium">Phone</p>
-                      <p className="text-sm text-gray-600">+1 (555) 123-4567</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Mail className="h-5 w-5 text-pioneer-green" />
-                    <div>
-                      <p className="font-medium">Email</p>
-                      <p className="text-sm text-gray-600">info@pioneeracademy.edu</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Clock className="h-5 w-5 text-yellow-600" />
-                    <div>
-                      <p className="font-medium">Office Hours</p>
-                      <p className="text-sm text-gray-600">Monday - Friday: 8:00 AM - 4:00 PM</p>
-                    </div>
-                  </div>
+                  ))}
                 </CardContent>
               </Card>
 
-              <Card>
-                <CardHeader>
-                  <CardTitle>Send us a Message</CardTitle>
+              <Card className="card-hover border-0 shadow-xl rounded-3xl overflow-hidden">
+                <CardHeader className="bg-gradient-to-r from-pioneer-green to-emerald-500 text-white rounded-t-3xl">
+                  <CardTitle className="text-2xl">Send us a Message</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <form className="space-y-4">
+                <CardContent className="p-8 bg-gradient-to-br from-white to-green-50">
+                  <form className="space-y-6">
                     <div>
-                      <label className="block text-sm font-medium mb-1">Name</label>
+                      <label className="block text-sm font-bold mb-2 text-gray-700">Name</label>
                       <input 
                         type="text" 
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pioneer-light-blue" 
+                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-pioneer-light-blue/20 focus:border-pioneer-light-blue transition-all duration-300 bg-white/80" 
                         placeholder="Your full name"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium mb-1">Email</label>
+                      <label className="block text-sm font-bold mb-2 text-gray-700">Email</label>
                       <input 
                         type="email" 
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pioneer-light-blue" 
+                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-pioneer-light-blue/20 focus:border-pioneer-light-blue transition-all duration-300 bg-white/80" 
                         placeholder="your.email@example.com"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium mb-1">Subject</label>
+                      <label className="block text-sm font-bold mb-2 text-gray-700">Subject</label>
                       <input 
                         type="text" 
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pioneer-light-blue" 
+                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-pioneer-light-blue/20 focus:border-pioneer-light-blue transition-all duration-300 bg-white/80" 
                         placeholder="Inquiry subject"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium mb-1">Message</label>
+                      <label className="block text-sm font-bold mb-2 text-gray-700">Message</label>
                       <textarea 
                         rows={4}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pioneer-light-blue" 
+                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-pioneer-light-blue/20 focus:border-pioneer-light-blue transition-all duration-300 bg-white/80 resize-none" 
                         placeholder="Your message here..."
                       ></textarea>
                     </div>
-                    <ButtonCustom variant="primary" fullWidth>
+                    <ButtonCustom variant="primary" fullWidth className="bg-gradient-to-r from-pioneer-green to-emerald-500 hover:shadow-xl hover:scale-105 transition-all duration-300 py-4 text-lg font-semibold rounded-2xl">
                       Send Message
                     </ButtonCustom>
                   </form>
