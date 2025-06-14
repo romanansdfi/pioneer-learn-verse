@@ -6,114 +6,180 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import ButtonCustom from '@/components/ui/button-custom';
 import Navbar from '@/components/navbar/Navbar';
-
 const SchoolInfo: React.FC = () => {
   const [selectedGallery, setSelectedGallery] = useState<string | null>(null);
-
-  const courses = [
-    { class: "Class 1-2", subjects: ["English", "Mathematics", "Environmental Science", "Hindi", "Art & Craft", "Physical Education"], color: "from-pink-500 to-rose-500" },
-    { class: "Class 3-5", subjects: ["English", "Mathematics", "Environmental Science", "Hindi", "Computer Science", "Art & Craft", "Physical Education"], color: "from-purple-500 to-indigo-500" },
-    { class: "Class 6-8", subjects: ["English", "Mathematics", "Science", "Social Science", "Hindi", "Computer Science", "Art & Craft", "Physical Education"], color: "from-blue-500 to-cyan-500" },
-    { class: "Class 9-10", subjects: ["English", "Mathematics", "Science", "Social Science", "Hindi", "Computer Applications", "Physical Education"], color: "from-emerald-500 to-teal-500" }
-  ];
-
-  const sports = [
-    { name: "Cricket", achievements: "District Champions 2023", icon: "🏏", color: "from-orange-400 to-red-500" },
-    { name: "Basketball", achievements: "State Runners-up 2023", icon: "🏀", color: "from-blue-400 to-purple-500" },
-    { name: "Football", achievements: "Regional Champions 2022", icon: "⚽", color: "from-green-400 to-emerald-500" },
-    { name: "Table Tennis", achievements: "Inter-school Winners 2023", icon: "🏓", color: "from-yellow-400 to-orange-500" },
-    { name: "Swimming", achievements: "City Champions 2023", icon: "🏊", color: "from-cyan-400 to-blue-500" },
-    { name: "Athletics", achievements: "Multiple State Records", icon: "🏃", color: "from-pink-400 to-rose-500" }
-  ];
-
-  const activities = [
-    { name: "Science Club", day: "Monday", time: "3:30 PM - 4:30 PM", icon: "🔬", color: "from-blue-400 to-indigo-500" },
-    { name: "Art & Craft", day: "Tuesday", time: "3:30 PM - 4:30 PM", icon: "🎨", color: "from-pink-400 to-purple-500" },
-    { name: "Music Club", day: "Wednesday", time: "3:30 PM - 4:30 PM", icon: "🎵", color: "from-green-400 to-teal-500" },
-    { name: "Dance Club", day: "Thursday", time: "3:30 PM - 4:30 PM", icon: "💃", color: "from-yellow-400 to-orange-500" },
-    { name: "Drama Club", day: "Friday", time: "3:30 PM - 4:30 PM", icon: "🎭", color: "from-red-400 to-pink-500" },
-    { name: "Debate Society", day: "Saturday", time: "10:00 AM - 11:00 AM", icon: "🗣️", color: "from-purple-400 to-indigo-500" }
-  ];
-
-  const events = [
-    { name: "Annual Day Celebration", date: "2024-03-15", type: "Cultural", color: "from-purple-500 to-pink-500" },
-    { name: "Science Exhibition", date: "2024-02-20", type: "Academic", color: "from-blue-500 to-cyan-500" },
-    { name: "Sports Day", date: "2024-01-25", type: "Sports", color: "from-green-500 to-emerald-500" },
-    { name: "Parent-Teacher Meeting", date: "2024-04-10", type: "Meeting", color: "from-orange-500 to-red-500" }
-  ];
-
-  const galleryImages = [
-    { category: "Events", images: ["Annual Day 2023", "Science Fair", "Sports Day", "Cultural Program"], color: "from-purple-500 to-indigo-500" },
-    { category: "Campus", images: ["Main Building", "Library", "Computer Lab", "Playground"], color: "from-blue-500 to-cyan-500" },
-    { category: "Activities", images: ["Art Class", "Music Room", "Dance Performance", "Drama Club"], color: "from-green-500 to-teal-500" }
-  ];
-
-  const leadership = [
-    {
-      name: "Dr. Sarah Johnson",
-      position: "Principal",
-      qualification: "M.Ed, Ph.D in Education",
-      experience: "15+ years",
-      description: "Leading Pioneer Academy with vision and dedication to excellence in education.",
-      color: "from-blue-500 to-purple-500"
-    },
-    {
-      name: "Mr. David Wilson",
-      position: "Vice Principal",
-      qualification: "M.A. in Educational Administration",
-      experience: "12+ years",
-      description: "Supporting academic operations and student development initiatives.",
-      color: "from-green-500 to-teal-500"
-    }
-  ];
-
-  const teamMembers = [
-    {
-      name: "Ms. Emily Chen",
-      position: "Head of Academics",
-      department: "Academic Affairs",
-      qualification: "M.Ed in Curriculum Development",
-      color: "from-pink-500 to-rose-500"
-    },
-    {
-      name: "Mr. James Rodriguez",
-      position: "Sports Coordinator",
-      department: "Physical Education",
-      qualification: "B.P.Ed, Diploma in Sports Management",
-      color: "from-orange-500 to-red-500"
-    },
-    {
-      name: "Dr. Priya Sharma",
-      position: "Science Department Head",
-      department: "Sciences",
-      qualification: "Ph.D in Chemistry",
-      color: "from-cyan-500 to-blue-500"
-    },
-    {
-      name: "Ms. Rachel Thompson",
-      position: "Arts & Culture Head",
-      department: "Creative Arts",
-      qualification: "M.A. in Fine Arts",
-      color: "from-purple-500 to-indigo-500"
-    },
-    {
-      name: "Mr. Ahmed Hassan",
-      position: "Technology Coordinator",
-      department: "IT & Computer Science",
-      qualification: "M.Tech in Computer Science",
-      color: "from-emerald-500 to-green-500"
-    },
-    {
-      name: "Ms. Lisa Parker",
-      position: "Student Counselor",
-      department: "Student Affairs",
-      qualification: "M.A. in Psychology",
-      color: "from-yellow-500 to-orange-500"
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
+  const courses = [{
+    class: "Class 1-2",
+    subjects: ["English", "Mathematics", "Environmental Science", "Hindi", "Art & Craft", "Physical Education"],
+    color: "from-pink-500 to-rose-500"
+  }, {
+    class: "Class 3-5",
+    subjects: ["English", "Mathematics", "Environmental Science", "Hindi", "Computer Science", "Art & Craft", "Physical Education"],
+    color: "from-purple-500 to-indigo-500"
+  }, {
+    class: "Class 6-8",
+    subjects: ["English", "Mathematics", "Science", "Social Science", "Hindi", "Computer Science", "Art & Craft", "Physical Education"],
+    color: "from-blue-500 to-cyan-500"
+  }, {
+    class: "Class 9-10",
+    subjects: ["English", "Mathematics", "Science", "Social Science", "Hindi", "Computer Applications", "Physical Education"],
+    color: "from-emerald-500 to-teal-500"
+  }];
+  const sports = [{
+    name: "Cricket",
+    achievements: "District Champions 2023",
+    icon: "🏏",
+    color: "from-orange-400 to-red-500"
+  }, {
+    name: "Basketball",
+    achievements: "State Runners-up 2023",
+    icon: "🏀",
+    color: "from-blue-400 to-purple-500"
+  }, {
+    name: "Football",
+    achievements: "Regional Champions 2022",
+    icon: "⚽",
+    color: "from-green-400 to-emerald-500"
+  }, {
+    name: "Table Tennis",
+    achievements: "Inter-school Winners 2023",
+    icon: "🏓",
+    color: "from-yellow-400 to-orange-500"
+  }, {
+    name: "Swimming",
+    achievements: "City Champions 2023",
+    icon: "🏊",
+    color: "from-cyan-400 to-blue-500"
+  }, {
+    name: "Athletics",
+    achievements: "Multiple State Records",
+    icon: "🏃",
+    color: "from-pink-400 to-rose-500"
+  }];
+  const activities = [{
+    name: "Science Club",
+    day: "Monday",
+    time: "3:30 PM - 4:30 PM",
+    icon: "🔬",
+    color: "from-blue-400 to-indigo-500"
+  }, {
+    name: "Art & Craft",
+    day: "Tuesday",
+    time: "3:30 PM - 4:30 PM",
+    icon: "🎨",
+    color: "from-pink-400 to-purple-500"
+  }, {
+    name: "Music Club",
+    day: "Wednesday",
+    time: "3:30 PM - 4:30 PM",
+    icon: "🎵",
+    color: "from-green-400 to-teal-500"
+  }, {
+    name: "Dance Club",
+    day: "Thursday",
+    time: "3:30 PM - 4:30 PM",
+    icon: "💃",
+    color: "from-yellow-400 to-orange-500"
+  }, {
+    name: "Drama Club",
+    day: "Friday",
+    time: "3:30 PM - 4:30 PM",
+    icon: "🎭",
+    color: "from-red-400 to-pink-500"
+  }, {
+    name: "Debate Society",
+    day: "Saturday",
+    time: "10:00 AM - 11:00 AM",
+    icon: "🗣️",
+    color: "from-purple-400 to-indigo-500"
+  }];
+  const events = [{
+    name: "Annual Day Celebration",
+    date: "2024-03-15",
+    type: "Cultural",
+    color: "from-purple-500 to-pink-500"
+  }, {
+    name: "Science Exhibition",
+    date: "2024-02-20",
+    type: "Academic",
+    color: "from-blue-500 to-cyan-500"
+  }, {
+    name: "Sports Day",
+    date: "2024-01-25",
+    type: "Sports",
+    color: "from-green-500 to-emerald-500"
+  }, {
+    name: "Parent-Teacher Meeting",
+    date: "2024-04-10",
+    type: "Meeting",
+    color: "from-orange-500 to-red-500"
+  }];
+  const galleryImages = [{
+    category: "Events",
+    images: ["Annual Day 2023", "Science Fair", "Sports Day", "Cultural Program"],
+    color: "from-purple-500 to-indigo-500"
+  }, {
+    category: "Campus",
+    images: ["Main Building", "Library", "Computer Lab", "Playground"],
+    color: "from-blue-500 to-cyan-500"
+  }, {
+    category: "Activities",
+    images: ["Art Class", "Music Room", "Dance Performance", "Drama Club"],
+    color: "from-green-500 to-teal-500"
+  }];
+  const leadership = [{
+    name: "Dr. Sarah Johnson",
+    position: "Principal",
+    qualification: "M.Ed, Ph.D in Education",
+    experience: "15+ years",
+    description: "Leading Pioneer Academy with vision and dedication to excellence in education.",
+    color: "from-blue-500 to-purple-500"
+  }, {
+    name: "Mr. David Wilson",
+    position: "Vice Principal",
+    qualification: "M.A. in Educational Administration",
+    experience: "12+ years",
+    description: "Supporting academic operations and student development initiatives.",
+    color: "from-green-500 to-teal-500"
+  }];
+  const teamMembers = [{
+    name: "Ms. Emily Chen",
+    position: "Head of Academics",
+    department: "Academic Affairs",
+    qualification: "M.Ed in Curriculum Development",
+    color: "from-pink-500 to-rose-500"
+  }, {
+    name: "Mr. James Rodriguez",
+    position: "Sports Coordinator",
+    department: "Physical Education",
+    qualification: "B.P.Ed, Diploma in Sports Management",
+    color: "from-orange-500 to-red-500"
+  }, {
+    name: "Dr. Priya Sharma",
+    position: "Science Department Head",
+    department: "Sciences",
+    qualification: "Ph.D in Chemistry",
+    color: "from-cyan-500 to-blue-500"
+  }, {
+    name: "Ms. Rachel Thompson",
+    position: "Arts & Culture Head",
+    department: "Creative Arts",
+    qualification: "M.A. in Fine Arts",
+    color: "from-purple-500 to-indigo-500"
+  }, {
+    name: "Mr. Ahmed Hassan",
+    position: "Technology Coordinator",
+    department: "IT & Computer Science",
+    qualification: "M.Tech in Computer Science",
+    color: "from-emerald-500 to-green-500"
+  }, {
+    name: "Ms. Lisa Parker",
+    position: "Student Counselor",
+    department: "Student Affairs",
+    qualification: "M.A. in Psychology",
+    color: "from-yellow-500 to-orange-500"
+  }];
+  return <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
       <Navbar />
       
       {/* Enhanced Header Section */}
@@ -121,8 +187,8 @@ const SchoolInfo: React.FC = () => {
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-gradient-to-br from-pioneer-deep-blue via-pioneer-light-blue to-pioneer-green opacity-90"></div>
         <div className="absolute inset-0 opacity-20" style={{
-          backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='3'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")"
-        }}></div>
+        backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='3'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")"
+      }}></div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link to="/" className="inline-flex items-center text-white/80 hover:text-white mb-8 transition-all duration-300 hover:scale-105 group">
@@ -251,7 +317,7 @@ const SchoolInfo: React.FC = () => {
                         <Star className="h-4 w-4 text-white" />
                       </div>
                     </div>
-                    <h3 className="font-bold text-xl mb-3 text-pioneer-deep-blue">CBSE Affiliated</h3>
+                    <h3 className="font-bold text-xl mb-3 text-pioneer-deep-blue">NEB Affiliated</h3>
                     <p className="text-gray-600 leading-relaxed">Recognized curriculum following national standards</p>
                   </div>
                   <div className="text-center group">
@@ -286,23 +352,19 @@ const SchoolInfo: React.FC = () => {
           {/* Courses Tab */}
           <TabsContent value="courses">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {courses.map((course, index) => (
-                <Card key={index} className="card-hover border-0 shadow-xl rounded-3xl overflow-hidden">
+              {courses.map((course, index) => <Card key={index} className="card-hover border-0 shadow-xl rounded-3xl overflow-hidden">
                   <CardHeader className={`bg-gradient-to-r ${course.color} text-white rounded-t-3xl`}>
                     <CardTitle className="text-2xl font-bold">{course.class}</CardTitle>
                     <CardDescription className="text-white/80 text-lg">CBSE Curriculum</CardDescription>
                   </CardHeader>
                   <CardContent className="p-8 bg-gradient-to-br from-white to-gray-50">
                     <div className="flex flex-wrap gap-3">
-                      {course.subjects.map((subject, idx) => (
-                        <Badge key={idx} className="px-4 py-2 text-sm font-medium bg-white/80 text-gray-700 hover:bg-white transition-colors rounded-full shadow-md">
+                      {course.subjects.map((subject, idx) => <Badge key={idx} className="px-4 py-2 text-sm font-medium bg-white/80 text-gray-700 hover:bg-white transition-colors rounded-full shadow-md">
                           {subject}
-                        </Badge>
-                      ))}
+                        </Badge>)}
                     </div>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </TabsContent>
 
@@ -354,8 +416,7 @@ const SchoolInfo: React.FC = () => {
           {/* Sports Tab */}
           <TabsContent value="sports">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {sports.map((sport, index) => (
-                <Card key={index} className="card-hover border-0 shadow-xl rounded-3xl overflow-hidden">
+              {sports.map((sport, index) => <Card key={index} className="card-hover border-0 shadow-xl rounded-3xl overflow-hidden">
                   <CardHeader className={`bg-gradient-to-r ${sport.color} text-white rounded-t-3xl`}>
                     <CardTitle className="flex items-center gap-3 text-xl">
                       <span className="text-3xl">{sport.icon}</span>
@@ -370,16 +431,14 @@ const SchoolInfo: React.FC = () => {
                       <span className="text-sm text-gray-600 font-medium">{sport.achievements}</span>
                     </div>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </TabsContent>
 
           {/* Activities Tab */}
           <TabsContent value="activities">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {activities.map((activity, index) => (
-                <Card key={index} className="card-hover border-0 shadow-xl rounded-3xl overflow-hidden">
+              {activities.map((activity, index) => <Card key={index} className="card-hover border-0 shadow-xl rounded-3xl overflow-hidden">
                   <CardHeader className={`bg-gradient-to-r ${activity.color} text-white rounded-t-3xl`}>
                     <CardTitle className="flex items-center gap-3 text-xl">
                       <span className="text-2xl">{activity.icon}</span>
@@ -402,16 +461,14 @@ const SchoolInfo: React.FC = () => {
                       </div>
                     </div>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </TabsContent>
 
           {/* Gallery Tab */}
           <TabsContent value="gallery">
             <div className="space-y-8">
-              {galleryImages.map((category, index) => (
-                <Card key={index} className="card-hover border-0 shadow-xl rounded-3xl overflow-hidden">
+              {galleryImages.map((category, index) => <Card key={index} className="card-hover border-0 shadow-xl rounded-3xl overflow-hidden">
                   <CardHeader className={`bg-gradient-to-r ${category.color} text-white rounded-t-3xl`}>
                     <CardTitle className="flex items-center gap-3 text-2xl">
                       <div className="p-2 bg-white/20 rounded-full">
@@ -422,32 +479,24 @@ const SchoolInfo: React.FC = () => {
                   </CardHeader>
                   <CardContent className="p-8 bg-gradient-to-br from-white to-gray-50">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                      {category.images.map((image, idx) => (
-                        <div 
-                          key={idx}
-                          className="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-300 group"
-                          onClick={() => setSelectedGallery(image)}
-                        >
+                      {category.images.map((image, idx) => <div key={idx} className="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-300 group" onClick={() => setSelectedGallery(image)}>
                           <div className="text-center p-4">
                             <div className="p-3 bg-white/60 rounded-full mb-3 group-hover:bg-white/80 transition-colors">
                               <Camera className="h-8 w-8 text-gray-600" />
                             </div>
                             <p className="text-sm text-gray-700 font-medium">{image}</p>
                           </div>
-                        </div>
-                      ))}
+                        </div>)}
                     </div>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </TabsContent>
 
           {/* Events Tab */}
           <TabsContent value="events">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {events.map((event, index) => (
-                <Card key={index} className="card-hover border-0 shadow-xl rounded-3xl overflow-hidden">
+              {events.map((event, index) => <Card key={index} className="card-hover border-0 shadow-xl rounded-3xl overflow-hidden">
                   <CardHeader className={`bg-gradient-to-r ${event.color} text-white rounded-t-3xl`}>
                     <CardTitle className="text-xl">{event.name}</CardTitle>
                     <CardDescription className="text-white/80">
@@ -467,8 +516,7 @@ const SchoolInfo: React.FC = () => {
                       <span className="text-gray-600 font-medium">Mark your calendar</span>
                     </div>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </TabsContent>
 
@@ -521,13 +569,19 @@ const SchoolInfo: React.FC = () => {
                 </CardHeader>
                 <CardContent className="p-8 bg-gradient-to-br from-white to-green-50">
                   <div className="space-y-4">
-                    {[
-                      { name: "Digital Library", icon: BookOpen },
-                      { name: "Online Assignments", icon: Users },
-                      { name: "Study Materials", icon: BookOpen },
-                      { name: "Virtual Classroom", icon: Users }
-                    ].map((resource, idx) => (
-                      <div key={idx} className="flex items-center justify-between p-4 bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl border border-green-100 group hover:shadow-lg transition-all duration-300">
+                    {[{
+                    name: "Digital Library",
+                    icon: BookOpen
+                  }, {
+                    name: "Online Assignments",
+                    icon: Users
+                  }, {
+                    name: "Study Materials",
+                    icon: BookOpen
+                  }, {
+                    name: "Virtual Classroom",
+                    icon: Users
+                  }].map((resource, idx) => <div key={idx} className="flex items-center justify-between p-4 bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl border border-green-100 group hover:shadow-lg transition-all duration-300">
                         <div className="flex items-center gap-3">
                           <div className="p-2 bg-gradient-to-r from-pioneer-green to-emerald-500 rounded-full group-hover:scale-110 transition-transform">
                             <resource.icon className="h-4 w-4 text-white" />
@@ -537,8 +591,7 @@ const SchoolInfo: React.FC = () => {
                         <ButtonCustom variant="outline" size="sm" className="hover:bg-gradient-to-r hover:from-pioneer-green hover:to-emerald-500 hover:text-white transition-all duration-300 rounded-xl">
                           {idx === 0 ? "Access" : idx === 1 ? "View" : idx === 2 ? "Download" : "Join"}
                         </ButtonCustom>
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
                 </CardContent>
               </Card>
@@ -546,8 +599,6 @@ const SchoolInfo: React.FC = () => {
           </TabsContent>
         </Tabs>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default SchoolInfo;
