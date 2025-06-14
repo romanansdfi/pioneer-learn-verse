@@ -1,208 +1,227 @@
 
 import React from 'react';
-import { Clock, Users, Star } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
+import { Clock, Users, Star, ArrowRight, BookOpen, Code, Palette, BarChart } from 'lucide-react';
 import ButtonCustom from '../ui/button-custom';
-import { useNavigate } from 'react-router-dom';
 
 interface Course {
   id: number;
   title: string;
+  description: string;
   instructor: string;
+  duration: string;
+  students: number;
+  rating: number;
+  price: number;
+  originalPrice?: number;
+  image: string;
   category: string;
   level: 'Beginner' | 'Intermediate' | 'Advanced';
-  rating: number;
-  students: number;
-  duration: string;
-  image: string;
-  description?: string;
+  icon: React.ReactNode;
+  gradient: string;
 }
 
 const courses: Course[] = [
   {
     id: 1,
-    title: "Introduction to Web Development",
+    title: "Complete Web Development Bootcamp",
+    description: "Learn HTML, CSS, JavaScript, React, and Node.js from scratch to deployment",
     instructor: "Sarah Johnson",
+    duration: "12 weeks",
+    students: 15420,
+    rating: 4.9,
+    price: 299,
+    originalPrice: 499,
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&h=240&q=60",
     category: "Development",
     level: "Beginner",
-    rating: 4.8,
-    students: 1542,
-    duration: "6 weeks",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=500&q=60",
-    description: "Learn the fundamentals of web development, including HTML, CSS, and JavaScript. Build responsive websites from scratch and deploy them online."
+    icon: <Code className="w-6 h-6" />,
+    gradient: "from-blue-600 to-purple-600"
   },
   {
     id: 2,
-    title: "Data Science Fundamentals",
-    instructor: "Michael Chen",
+    title: "Data Science & Machine Learning",
+    description: "Master Python, pandas, NumPy, scikit-learn, and deep learning frameworks",
+    instructor: "Dr. Michael Chen",
+    duration: "16 weeks",
+    students: 8930,
+    rating: 4.8,
+    price: 399,
+    originalPrice: 699,
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&h=240&q=60",
     category: "Data Science",
     level: "Intermediate",
-    rating: 4.7,
-    students: 983,
-    duration: "8 weeks",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=500&q=60",
-    description: "Master data analysis techniques using Python. Learn statistical methods, data visualization, machine learning basics and how to extract insights from real-world datasets."
+    icon: <BarChart className="w-6 h-6" />,
+    gradient: "from-green-600 to-teal-600"
   },
   {
     id: 3,
-    title: "UX/UI Design Principles",
-    instructor: "Alex Rodriguez",
+    title: "UI/UX Design Masterclass",
+    description: "Create stunning user interfaces and experiences with Figma, Adobe XD, and design principles",
+    instructor: "Emma Rodriguez",
+    duration: "10 weeks",
+    students: 12300,
+    rating: 4.9,
+    price: 249,
+    originalPrice: 399,
+    image: "https://images.unsplash.com/photo-1558618047-e5c7ac0e7d1a?auto=format&fit=crop&w=400&h=240&q=60",
     category: "Design",
     level: "Beginner",
-    rating: 4.9,
-    students: 1247,
-    duration: "5 weeks",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=500&q=60",
-    description: "Discover the principles of user experience and interface design. Create wireframes, prototypes, and learn to conduct user testing to improve your designs."
-  },
-  {
-    id: 4,
-    title: "Advanced Machine Learning",
-    instructor: "Priya Sharma",
-    category: "AI & ML",
-    level: "Advanced",
-    rating: 4.6,
-    students: 742,
-    duration: "10 weeks",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=500&q=60",
-    description: "Dive deep into advanced machine learning algorithms and techniques. Build predictive models, implement neural networks, and work with large datasets."
-  },
-  {
-    id: 5,
-    title: "Digital Marketing Strategy",
-    instructor: "James Wilson",
-    category: "Marketing",
-    level: "Intermediate",
-    rating: 4.5,
-    students: 1120,
-    duration: "6 weeks",
-    image: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?auto=format&fit=crop&w=500&q=60",
-    description: "Learn to create comprehensive digital marketing strategies across multiple platforms. Master SEO, content marketing, social media campaigns, and performance analysis."
-  },
-  {
-    id: 6,
-    title: "Introduction to Physics",
-    instructor: "Dr. Emily Barnes",
-    category: "Science",
-    level: "Beginner",
-    rating: 4.9,
-    students: 876,
-    duration: "12 weeks",
-    image: "https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?auto=format&fit=crop&w=500&q=60",
-    description: "Explore the fundamental principles of physics. Learn about mechanics, thermodynamics, electricity, magnetism, and modern physics concepts with hands-on experiments."
-  },
-  {
-    id: 7,
-    title: "Advanced Mathematics",
-    instructor: "Prof. Robert Chen",
-    category: "Mathematics",
-    level: "Advanced",
-    rating: 4.7,
-    students: 542,
-    duration: "15 weeks",
-    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=500&q=60",
-    description: "Delve into advanced mathematical concepts including calculus, linear algebra, differential equations, and mathematical modeling with practical applications."
-  },
-  {
-    id: 8,
-    title: "English Literature",
-    instructor: "Dr. Amanda Lewis",
-    category: "Humanities",
-    level: "Intermediate",
-    rating: 4.8,
-    students: 785,
-    duration: "14 weeks",
-    image: "https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=500&q=60",
-    description: "Explore classic and contemporary literature through critical analysis. Study different literary periods, authors, and develop strong analytical and writing skills."
-  },
+    icon: <Palette className="w-6 h-6" />,
+    gradient: "from-pink-600 to-rose-600"
+  }
 ];
 
 const CourseCard: React.FC<{ course: Course }> = ({ course }) => {
-  const navigate = useNavigate();
-  const getLevelColor = (level: Course['level']) => {
-    switch (level) {
-      case 'Beginner':
-        return 'bg-green-100 text-green-800';
-      case 'Intermediate':
-        return 'bg-blue-100 text-blue-800';
-      case 'Advanced':
-        return 'bg-purple-100 text-purple-800';
-      default:
-        return 'bg-gray-100 text-gray-800';
-    }
-  };
-
-  const handleViewCourse = () => {
-    navigate(`/course-view/${course.id}`, { 
-      state: { course }
-    });
-  };
+  const discount = course.originalPrice ? Math.round((1 - course.price / course.originalPrice) * 100) : 0;
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden card-hover">
-      <div className="h-48 overflow-hidden relative">
-        <img src={course.image} alt={course.title} className="w-full h-full object-cover" />
-        <div className="absolute top-3 left-3">
-          <Badge variant="outline" className={`${getLevelColor(course.level)} border-none`}>
+    <div className="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
+      {/* Image with overlay */}
+      <div className="relative overflow-hidden">
+        <div className={`absolute inset-0 bg-gradient-to-br ${course.gradient} opacity-0 group-hover:opacity-80 transition-opacity duration-300 z-10`}></div>
+        <img 
+          src={course.image} 
+          alt={course.title}
+          className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+        
+        {/* Course level badge */}
+        <div className="absolute top-4 left-4 z-20">
+          <span className={`px-3 py-1 rounded-full text-xs font-semibold text-white ${
+            course.level === 'Beginner' ? 'bg-green-500' :
+            course.level === 'Intermediate' ? 'bg-yellow-500' : 'bg-red-500'
+          }`}>
             {course.level}
-          </Badge>
+          </span>
+        </div>
+
+        {/* Discount badge */}
+        {discount > 0 && (
+          <div className="absolute top-4 right-4 z-20">
+            <span className="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+              -{discount}%
+            </span>
+          </div>
+        )}
+
+        {/* Hover overlay content */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+          <ButtonCustom 
+            variant="accent" 
+            className="bg-white text-pioneer-deep-blue hover:bg-white/90 transform scale-90 group-hover:scale-100 transition-transform duration-300"
+            leftIcon={<BookOpen className="w-4 h-4" />}
+          >
+            View Course
+          </ButtonCustom>
         </div>
       </div>
-      
-      <div className="p-5">
-        <div className="text-sm text-gray-500 mb-1">{course.category}</div>
-        <h3 className="text-lg font-semibold mb-2 text-pioneer-deep-blue line-clamp-2">{course.title}</h3>
-        <p className="text-sm text-gray-600 mb-3">By {course.instructor}</p>
-        
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center space-x-1">
-            <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-            <span className="text-sm font-medium">{course.rating}</span>
-          </div>
-          
-          <div className="flex items-center space-x-1 text-gray-500">
-            <Users className="h-4 w-4" />
-            <span className="text-sm">{course.students.toLocaleString()}</span>
-          </div>
-          
-          <div className="flex items-center space-x-1 text-gray-500">
-            <Clock className="h-4 w-4" />
-            <span className="text-sm">{course.duration}</span>
+
+      <div className="p-6">
+        {/* Category and Icon */}
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center">
+            <div className={`p-2 rounded-lg bg-gradient-to-br ${course.gradient} text-white mr-3`}>
+              {course.icon}
+            </div>
+            <span className="text-sm font-medium text-gray-600">{course.category}</span>
           </div>
         </div>
-        
-        <ButtonCustom variant="secondary" fullWidth onClick={handleViewCourse}>
-          View Course
-        </ButtonCustom>
+
+        {/* Title */}
+        <h3 className="text-xl font-bold text-pioneer-deep-blue mb-3 line-clamp-2 group-hover:text-pioneer-light-blue transition-colors">
+          {course.title}
+        </h3>
+
+        {/* Description */}
+        <p className="text-gray-600 mb-4 line-clamp-3 leading-relaxed">
+          {course.description}
+        </p>
+
+        {/* Instructor */}
+        <p className="text-sm text-gray-500 mb-4 font-medium">
+          by {course.instructor}
+        </p>
+
+        {/* Course stats */}
+        <div className="flex items-center justify-between mb-4 text-sm text-gray-500">
+          <div className="flex items-center">
+            <Clock className="w-4 h-4 mr-1" />
+            <span>{course.duration}</span>
+          </div>
+          <div className="flex items-center">
+            <Users className="w-4 h-4 mr-1" />
+            <span>{course.students.toLocaleString()}</span>
+          </div>
+          <div className="flex items-center">
+            <Star className="w-4 h-4 mr-1 fill-yellow-400 text-yellow-400" />
+            <span className="font-semibold">{course.rating}</span>
+          </div>
+        </div>
+
+        {/* Price and CTA */}
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-2">
+            <span className="text-2xl font-bold text-pioneer-deep-blue">
+              ${course.price}
+            </span>
+            {course.originalPrice && (
+              <span className="text-lg text-gray-400 line-through">
+                ${course.originalPrice}
+              </span>
+            )}
+          </div>
+          
+          <ButtonCustom 
+            size="sm" 
+            className="group-hover:shadow-lg transition-shadow"
+            rightIcon={<ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
+          >
+            Enroll
+          </ButtonCustom>
+        </div>
       </div>
     </div>
   );
 };
 
 const FeaturedCourses: React.FC = () => {
-  const navigate = useNavigate();
-  
   return (
-    <section className="py-16 px-4 md:px-8 lg:px-16 bg-pioneer-gray/30">
+    <section className="py-20 px-4 md:px-8 lg:px-16 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-center justify-between mb-10">
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-pioneer-deep-blue mb-2">Featured Courses</h2>
-            <p className="text-gray-600 max-w-xl">Explore our most popular courses with high ratings and engaging content</p>
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center px-4 py-2 bg-pioneer-light-blue/10 rounded-full text-pioneer-light-blue text-sm font-semibold mb-4">
+            <BookOpen className="w-4 h-4 mr-2" />
+            Featured Courses
           </div>
+          
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-pioneer-deep-blue mb-6">
+            Learn from the <span className="text-transparent bg-clip-text bg-gradient-to-r from-pioneer-light-blue to-pioneer-green">Best</span>
+          </h2>
+          
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Discover our most popular courses designed by industry experts. 
+            Start your learning journey with hands-on projects and real-world applications.
+          </p>
+        </div>
+
+        {/* Courses Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {courses.map((course) => (
+            <CourseCard key={course.id} course={course} />
+          ))}
+        </div>
+
+        {/* CTA Section */}
+        <div className="text-center">
           <ButtonCustom 
             variant="outline" 
-            className="mt-4 md:mt-0"
-            onClick={() => navigate('/course-view')}
+            size="lg"
+            className="border-2 border-pioneer-light-blue text-pioneer-light-blue hover:bg-pioneer-light-blue hover:text-white transition-all duration-300 px-8 py-4"
+            rightIcon={<ArrowRight className="w-5 h-5" />}
           >
             View All Courses
           </ButtonCustom>
-        </div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {courses.slice(0, 4).map((course) => (
-            <CourseCard key={course.id} course={course} />
-          ))}
         </div>
       </div>
     </section>
