@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Star } from 'lucide-react';
 
@@ -14,11 +13,11 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Emily Johnson",
-    role: "Software Developer",
+    name: "Bhola Yadav",
+    role: "Full Scholar at TU",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&h=120&q=60",
     rating: 5,
-    text: "PioneerLearn completely transformed my career. The interactive coding environment made it easy to learn and practice simultaneously. I landed a developer position just two months after completing my first course!"
+    text: "PioneerLearn completely transformed my career. The interactive learning environment made it easy to learn and practice simultaneously. It changes my way of thinking"
   },
   {
     id: 2,
