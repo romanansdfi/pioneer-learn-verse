@@ -1,9 +1,8 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/navbar/Navbar';
 import HeroSection from '../components/landing/HeroSection';
-import FeaturedCourses from '../components/landing/FeaturedCourses';
+import TopperStudents from '../components/landing/TopperStudents';
 import Testimonials from '../components/landing/Testimonials';
 import CallToAction from '../components/landing/CallToAction';
 import ExploreSchoolButton from '../components/school/ExploreSchoolButton';
@@ -20,7 +19,7 @@ const Index: React.FC = () => {
           <ExploreSchoolButton />
         </div>
         
-        <FeaturedCourses />
+        <TopperStudents />
         <Testimonials />
         <CallToAction />
       </main>
