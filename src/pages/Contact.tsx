@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, MapPin, Phone, Mail, Clock, GraduationCap } from 'lucide-react';
+import { ArrowLeft, MapPin, Phone, Mail, Clock, GraduationCap, Calendar, Download } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import ButtonCustom from '@/components/ui/button-custom';
 import Navbar from '@/components/navbar/Navbar';
@@ -113,92 +112,71 @@ const Contact: React.FC = () => {
             </Card>
           </div>
 
-          {/* Contact Form */}
+          {/* Campus Visit Hours */}
           <div>
             <Card className="border-0 shadow-xl rounded-3xl overflow-hidden">
               <CardHeader className="bg-gradient-to-r from-pioneer-green to-emerald-500 text-white rounded-t-3xl">
-                <CardTitle className="text-2xl">Send us a Message</CardTitle>
+                <CardTitle className="flex items-center gap-3 text-2xl">
+                  <div className="p-2 bg-white/20 rounded-full">
+                    <GraduationCap className="h-8 w-8" />
+                  </div>
+                  🏫 Visit Us
+                </CardTitle>
               </CardHeader>
               <CardContent className="p-8 bg-gradient-to-br from-white to-green-50">
-                <form className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        First Name
-                      </label>
-                      <input
-                        type="text"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pioneer-light-blue focus:border-transparent transition-all"
-                        placeholder="Enter your first name"
-                      />
+                <div className="space-y-6">
+                  <p className="text-gray-700 text-lg leading-relaxed">
+                    We welcome parents and students for campus tours:
+                  </p>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-4">
+                      <div className="p-3 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full">
+                        <Calendar className="h-6 w-6 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-lg text-gray-800 mb-2">Days</h3>
+                        <p className="text-gray-600">Monday to Friday</p>
+                      </div>
                     </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Last Name
-                      </label>
-                      <input
-                        type="text"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pioneer-light-blue focus:border-transparent transition-all"
-                        placeholder="Enter your last name"
-                      />
+
+                    <div className="flex items-start gap-4">
+                      <div className="p-3 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full">
+                        <Clock className="h-6 w-6 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-lg text-gray-800 mb-2">Timings</h3>
+                        <p className="text-gray-600">10:00 AM - 3:00 PM</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <div className="p-3 bg-gradient-to-r from-orange-500 to-red-500 rounded-full">
+                        <Phone className="h-6 w-6 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-lg text-gray-800 mb-2">Appointment</h3>
+                        <p className="text-gray-600">Prior notice appreciated (call Admissions)</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4">
+                      <div className="p-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full">
+                        <MapPin className="h-6 w-6 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-lg text-gray-800 mb-2">📍 Campus Map</h3>
+                        <ButtonCustom 
+                          variant="outline" 
+                          className="border-2 border-pioneer-deep-blue text-pioneer-deep-blue hover:bg-pioneer-deep-blue hover:text-white transition-all duration-300 rounded-xl px-6 py-2 inline-flex items-center gap-2"
+                        >
+                          <Download className="h-4 w-4" />
+                          Download Here
+                        </ButtonCustom>
+                      </div>
                     </div>
                   </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Email Address
-                    </label>
-                    <input
-                      type="email"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pioneer-light-blue focus:border-transparent transition-all"
-                      placeholder="Enter your email address"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pioneer-light-blue focus:border-transparent transition-all"
-                      placeholder="Enter your phone number"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Subject
-                    </label>
-                    <select className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pioneer-light-blue focus:border-transparent transition-all">
-                      <option>Select a subject</option>
-                      <option>Admissions Inquiry</option>
-                      <option>Academic Information</option>
-                      <option>Fee Structure</option>
-                      <option>General Information</option>
-                      <option>Other</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Message
-                    </label>
-                    <textarea
-                      rows={5}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-pioneer-light-blue focus:border-transparent transition-all resize-none"
-                      placeholder="Enter your message here..."
-                    ></textarea>
-                  </div>
-
-                  <ButtonCustom 
-                    variant="primary" 
-                    fullWidth 
-                    className="bg-gradient-to-r from-pioneer-deep-blue to-pioneer-light-blue hover:shadow-xl hover:scale-105 transition-all duration-300 py-4 text-lg font-semibold rounded-2xl"
-                  >
-                    Send Message
-                  </ButtonCustom>
-                </form>
+                </div>
               </CardContent>
             </Card>
           </div>
