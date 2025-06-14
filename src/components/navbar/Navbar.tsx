@@ -1,27 +1,46 @@
 
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Menu, X, Search } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Menu, X, User, Search, LogOut, Bell, ChevronDown } from 'lucide-react';
 import ButtonCustom from '../ui/button-custom';
+import { useAuth } from '@/contexts/AuthContext';
 
 interface NavLink {
   name: string;
   path: string;
+  requiresAuth?: boolean;
 }
 
 const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { user, profile, signOut } = useAuth();
+  const isLoggedIn = !!user;
+  const navigate = useNavigate();
 
   const navLinks: NavLink[] = [
     { name: 'Home', path: '/' },
-    { name: 'Dashboard', path: '/dashboard' },
-    { name: 'Courses', path: '/course-view' },
+    { name: 'Courses', path: '/courses', requiresAuth: true },
+    { name: 'Dashboard', path: '/dashboard', requiresAuth: true },
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
   ];
 
+  const filteredNavLinks = navLinks.filter(link => 
+    !link.requiresAuth || (link.requiresAuth && isLoggedIn)
+  );
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleSignOut = async () => {
+    await signOut();
+    setIsMobileMenuOpen(false);
+  };
+
+  const handleAuthClick = () => {
+    navigate('/auth');
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -43,7 +62,7 @@ const Navbar: React.FC = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <div className="hidden md:flex items-center space-x-1">
-              {navLinks.map((link) => (
+              {filteredNavLinks.map((link) => (
                 <Link
                   key={link.name}
                   to={link.path}
@@ -60,6 +79,56 @@ const Navbar: React.FC = () => {
               <button className="text-gray-600 hover:text-pioneer-deep-blue p-2 rounded-lg hover:bg-gray-100 transition-all duration-300">
                 <Search className="h-5 w-5" />
               </button>
+              
+              {isLoggedIn ? (
+                <div className="flex items-center space-x-3">
+                  {/* Notifications */}
+                  <button className="relative text-gray-600 hover:text-pioneer-deep-blue p-2 rounded-lg hover:bg-gray-100 transition-all duration-300">
+                    <Bell className="h-5 w-5" />
+                    <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-pulse"></span>
+                  </button>
+
+                  {/* Profile Dropdown */}
+                  <div className="relative group">
+                    <Link 
+                      to="/profile" 
+                      className="flex items-center space-x-2 text-gray-600 hover:text-pioneer-deep-blue p-2 rounded-lg hover:bg-gray-100 transition-all duration-300"
+                    >
+                      <div className="h-8 w-8 rounded-full bg-gradient-to-br from-pioneer-deep-blue to-pioneer-light-blue text-white flex items-center justify-center shadow-lg">
+                        <User className="h-4 w-4" />
+                      </div>
+                      <ChevronDown className="h-4 w-4" />
+                    </Link>
+                  </div>
+
+                  {/* Sign Out */}
+                  <button 
+                    onClick={handleSignOut}
+                    className="text-gray-600 hover:text-red-600 p-2 rounded-lg hover:bg-red-50 transition-all duration-300"
+                    title="Sign Out"
+                  >
+                    <LogOut className="h-5 w-5" />
+                  </button>
+                </div>
+              ) : (
+                <div className="flex items-center space-x-3">
+                  <ButtonCustom 
+                    variant="outline" 
+                    size="sm" 
+                    onClick={handleAuthClick}
+                    className="hover:scale-105 transition-transform duration-300"
+                  >
+                    Sign In
+                  </ButtonCustom>
+                  <ButtonCustom 
+                    size="sm" 
+                    onClick={handleAuthClick}
+                    className="bg-gradient-to-r from-pioneer-deep-blue to-pioneer-light-blue hover:shadow-lg hover:scale-105 transition-all duration-300"
+                  >
+                    Sign Up
+                  </ButtonCustom>
+                </div>
+              )}
             </div>
           </div>
 
@@ -79,12 +148,12 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu with slide animation */}
       <div className={`md:hidden transition-all duration-300 ease-in-out ${
         isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
       } overflow-hidden bg-white/95 backdrop-blur-lg border-t border-gray-200`}>
         <div className="px-4 pt-2 pb-3 space-y-1">
-          {navLinks.map((link) => (
+          {filteredNavLinks.map((link) => (
             <Link
               key={link.name}
               to={link.path}
@@ -94,6 +163,48 @@ const Navbar: React.FC = () => {
               {link.name}
             </Link>
           ))}
+          
+          <div className="pt-4 space-y-2">
+            {isLoggedIn ? (
+              <>
+                <Link
+                  to="/profile"
+                  className="flex items-center px-3 py-3 text-base font-medium text-gray-600 hover:text-pioneer-deep-blue hover:bg-gradient-to-r hover:from-pioneer-light-blue/10 hover:to-pioneer-green/10 rounded-lg transition-all duration-300"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <User className="h-5 w-5 mr-3" />
+                  Profile
+                </Link>
+                <ButtonCustom 
+                  variant="outline" 
+                  fullWidth 
+                  onClick={handleSignOut}
+                  leftIcon={<LogOut className="h-4 w-4" />}
+                  className="justify-start hover:bg-red-50 hover:border-red-200 hover:text-red-600"
+                >
+                  Sign Out
+                </ButtonCustom>
+              </>
+            ) : (
+              <>
+                <ButtonCustom 
+                  variant="outline" 
+                  fullWidth 
+                  onClick={handleAuthClick}
+                  className="hover:scale-105 transition-transform duration-300"
+                >
+                  Sign In
+                </ButtonCustom>
+                <ButtonCustom 
+                  fullWidth 
+                  onClick={handleAuthClick}
+                  className="bg-gradient-to-r from-pioneer-deep-blue to-pioneer-light-blue hover:shadow-lg hover:scale-105 transition-all duration-300"
+                >
+                  Sign Up
+                </ButtonCustom>
+              </>
+            )}
+          </div>
         </div>
       </div>
     </nav>
