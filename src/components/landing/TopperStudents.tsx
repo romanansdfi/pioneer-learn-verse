@@ -50,13 +50,13 @@ const topperStudents: Student[] = [
   {
     id: 3,
     name: "Puja Rouniyar",
-    class: "Class 11th Commerce",
-    achievement: "BIT Entrance Topper",
-    description: "Entrance topper at BIT (Bachelor level) with outstanding performance in academics, sports, and cultural activities achieving 95.5% marks",
+    class: "Bachelor's",
+    achievement: "Mahindra Morang College Entrance Topper",
+    description: "Entrance topper at Mahindra Morang College (Bachelor level) with outstanding performance in academics, sports, and cultural activities achieving 95.5% marks. Excelled in computer science and mathematics with exceptional analytical skills.",
     score: "95.5%",
     rank: "1st",
-    subjects: ["Accountancy", "Business Studies", "Economics", "English"],
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&h=400&q=60",
+    subjects: ["Computer Science", "Mathematics", "Science", "English"],
+    image: "/lovable-uploads/5fc1c40b-9666-4b2b-896a-bb5a2cc4a78f.png",
     badge: "All-Rounder",
     icon: <Star className="w-6 h-6" />,
     gradient: "from-blue-500 to-cyan-500"
