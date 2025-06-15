@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Trophy, Star, Award, ArrowRight, Users, GraduationCap, X, MapPin, Calendar, Medal, BookOpen, Target, Brain } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -442,7 +443,7 @@ const TopperStudents: React.FC = () => {
 
         {/* Students Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {topperStudents.slice(0, 9).map((student) => (
+          {topperStudents.slice(0, 3).map((student) => (
             <StudentCard key={student.id} student={student} />
           ))}
         </div>
