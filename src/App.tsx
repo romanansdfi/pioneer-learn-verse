@@ -14,6 +14,7 @@ import Profile from "./pages/Profile";
 import SchoolInfo from "./pages/SchoolInfo";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Achievers from "./pages/Achievers";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/achievers" element={<Achievers />} />
             <Route path="/dashboard" element={
               <ProtectedRoute>
                 <Dashboard />

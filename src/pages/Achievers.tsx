@@ -1,8 +1,10 @@
+
 import React, { useState } from 'react';
-import { Trophy, Star, Award, ArrowRight, Users, GraduationCap, X, MapPin, Calendar, Medal, BookOpen, Target, Brain } from 'lucide-react';
+import { Trophy, Star, Award, ArrowLeft, Users, GraduationCap, Medal, BookOpen, Target, Brain } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import ButtonCustom from '../ui/button-custom';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '../ui/dialog';
+import Navbar from '../components/navbar/Navbar';
+import ButtonCustom from '../components/ui/button-custom';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '../components/ui/dialog';
 
 interface Student {
   id: number;
@@ -19,7 +21,7 @@ interface Student {
   gradient: string;
 }
 
-const topperStudents: Student[] = [
+const allStudents: Student[] = [
   {
     id: 1,
     name: "Binu Chy",
@@ -402,7 +404,7 @@ const StudentCard: React.FC<{ student: Student }> = ({ student }) => {
             <ButtonCustom 
               size="sm" 
               className="group-hover:shadow-lg transition-shadow"
-              rightIcon={<ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
+              rightIcon={<ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />}
               onClick={handleDetailsClick}
             >
               Details
@@ -420,49 +422,74 @@ const StudentCard: React.FC<{ student: Student }> = ({ student }) => {
   );
 };
 
-const TopperStudents: React.FC = () => {
+const Achievers: React.FC = () => {
   return (
-    <section className="py-20 px-4 md:px-8 lg:px-16 bg-gradient-to-b from-white to-gray-50">
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-pioneer-light-blue/10 rounded-full text-pioneer-light-blue text-sm font-semibold mb-4">
-            <Trophy className="w-4 h-4 mr-2" />
-            Our Achievers
+    <div className="min-h-screen flex flex-col bg-white">
+      <Navbar />
+      
+      <main className="flex-grow">
+        <section className="py-20 px-4 md:px-8 lg:px-16 bg-gradient-to-b from-white to-gray-50">
+          <div className="max-w-7xl mx-auto">
+            {/* Header with back button */}
+            <div className="flex items-center justify-between mb-8">
+              <Link to="/">
+                <ButtonCustom 
+                  variant="outline"
+                  leftIcon={<ArrowLeft className="w-4 h-4" />}
+                  className="border border-pioneer-light-blue text-pioneer-light-blue hover:bg-pioneer-light-blue hover:text-white"
+                >
+                  Back to Home
+                </ButtonCustom>
+              </Link>
+            </div>
+
+            {/* Section Header */}
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center px-4 py-2 bg-pioneer-light-blue/10 rounded-full text-pioneer-light-blue text-sm font-semibold mb-4">
+                <Trophy className="w-4 h-4 mr-2" />
+                All Achievers
+              </div>
+              
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-pioneer-deep-blue mb-6">
+                Our Complete List of <span className="text-transparent bg-clip-text bg-gradient-to-r from-pioneer-light-blue to-pioneer-green">Outstanding Students</span>
+              </h1>
+              
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Discover all our exceptional students who have achieved remarkable success through dedication, hard work, and academic excellence.
+              </p>
+            </div>
+
+            {/* Students Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {allStudents.map((student) => (
+                <StudentCard key={student.id} student={student} />
+              ))}
+            </div>
+
+            {/* Statistics Section */}
+            <div className="mt-20 grid grid-cols-1 md:grid-cols-4 gap-8">
+              <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
+                <div className="text-3xl font-bold text-pioneer-deep-blue mb-2">{allStudents.length}+</div>
+                <div className="text-gray-600">Total Achievers</div>
+              </div>
+              <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
+                <div className="text-3xl font-bold text-pioneer-deep-blue mb-2">95%+</div>
+                <div className="text-gray-600">Average Score</div>
+              </div>
+              <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
+                <div className="text-3xl font-bold text-pioneer-deep-blue mb-2">8</div>
+                <div className="text-gray-600">Different Categories</div>
+              </div>
+              <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
+                <div className="text-3xl font-bold text-pioneer-deep-blue mb-2">100%</div>
+                <div className="text-gray-600">Success Rate</div>
+              </div>
+            </div>
           </div>
-          
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-pioneer-deep-blue mb-6">
-            Meet Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-pioneer-light-blue to-pioneer-green">Topper Students</span>
-          </h2>
-          
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Celebrating excellence and outstanding achievements of our brilliant students who have made us proud with their dedication and hard work.
-          </p>
-        </div>
-
-        {/* Students Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {topperStudents.slice(0, 9).map((student) => (
-            <StudentCard key={student.id} student={student} />
-          ))}
-        </div>
-
-        {/* CTA Section */}
-        <div className="text-center">
-          <Link to="/achievers">
-            <ButtonCustom 
-              variant="outline" 
-              size="lg"
-              className="border-2 border-pioneer-light-blue text-pioneer-light-blue hover:bg-pioneer-light-blue hover:text-white transition-all duration-300 px-8 py-4"
-              rightIcon={<ArrowRight className="w-5 h-5" />}
-            >
-              View All Achievers
-            </ButtonCustom>
-          </Link>
-        </div>
-      </div>
-    </section>
+        </section>
+      </main>
+    </div>
   );
 };
 
-export default TopperStudents;
+export default Achievers;
