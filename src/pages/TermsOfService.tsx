@@ -6,22 +6,22 @@ import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
 
 const TermsOfService: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-pioneer-gray via-white to-pioneer-light-blue/30">
       <Navbar />
-      
-      <main className="flex-grow py-16 px-4 md:px-8 lg:px-16">
+
+      <main className="flex-grow py-16 px-2 md:px-8 lg:px-0">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-pioneer-deep-blue mb-4">
+            <h1 className="text-5xl font-extrabold text-gradient-primary mb-3 drop-shadow-lg">
               Terms of Service
             </h1>
-            <p className="text-xl text-gray-600">
+            <p className="text-lg text-gray-700">
               Last updated: {new Date().toLocaleDateString()}
             </p>
           </div>
 
           <div className="space-y-8">
-            <Card>
+            <Card className="card-gradient card-hover animate-fade-in">
               <CardHeader>
                 <CardTitle className="text-2xl text-pioneer-deep-blue">1. Acceptance of Terms</CardTitle>
               </CardHeader>
@@ -33,7 +33,7 @@ const TermsOfService: React.FC = () => {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="card-gradient card-hover animate-fade-in">
               <CardHeader>
                 <CardTitle className="text-2xl text-pioneer-deep-blue">2. Educational Services</CardTitle>
               </CardHeader>
@@ -51,7 +51,7 @@ const TermsOfService: React.FC = () => {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="card-gradient card-hover animate-fade-in">
               <CardHeader>
                 <CardTitle className="text-2xl text-pioneer-deep-blue">3. User Accounts and Registration</CardTitle>
               </CardHeader>
@@ -69,7 +69,7 @@ const TermsOfService: React.FC = () => {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="card-gradient card-hover animate-fade-in">
               <CardHeader>
                 <CardTitle className="text-2xl text-pioneer-deep-blue">4. Student Conduct and Academic Integrity</CardTitle>
               </CardHeader>
@@ -88,7 +88,7 @@ const TermsOfService: React.FC = () => {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="card-gradient card-hover animate-fade-in">
               <CardHeader>
                 <CardTitle className="text-2xl text-pioneer-deep-blue">5. Intellectual Property Rights</CardTitle>
               </CardHeader>
@@ -101,7 +101,7 @@ const TermsOfService: React.FC = () => {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="card-gradient card-hover animate-fade-in">
               <CardHeader>
                 <CardTitle className="text-2xl text-pioneer-deep-blue">6. Payment and Refund Policy</CardTitle>
               </CardHeader>
@@ -113,7 +113,7 @@ const TermsOfService: React.FC = () => {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="card-gradient card-hover animate-fade-in">
               <CardHeader>
                 <CardTitle className="text-2xl text-pioneer-deep-blue">7. Privacy and Data Protection</CardTitle>
               </CardHeader>
@@ -125,7 +125,7 @@ const TermsOfService: React.FC = () => {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="card-gradient card-hover animate-fade-in">
               <CardHeader>
                 <CardTitle className="text-2xl text-pioneer-deep-blue">8. Limitation of Liability</CardTitle>
               </CardHeader>
@@ -138,7 +138,7 @@ const TermsOfService: React.FC = () => {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="card-gradient card-hover animate-fade-in">
               <CardHeader>
                 <CardTitle className="text-2xl text-pioneer-deep-blue">9. Termination</CardTitle>
               </CardHeader>
@@ -151,7 +151,7 @@ const TermsOfService: React.FC = () => {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="card-gradient card-hover animate-fade-in">
               <CardHeader>
                 <CardTitle className="text-2xl text-pioneer-deep-blue">10. Contact Information</CardTitle>
               </CardHeader>
@@ -172,7 +172,7 @@ const TermsOfService: React.FC = () => {
           <div className="mt-12 text-center">
             <Link 
               to="/" 
-              className="inline-block bg-pioneer-deep-blue text-white px-8 py-3 rounded-lg hover:bg-pioneer-light-blue transition-colors"
+              className="btn-primary"
             >
               Back to Home
             </Link>

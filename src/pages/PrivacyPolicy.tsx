@@ -6,22 +6,22 @@ import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
 
 const PrivacyPolicy: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-pioneer-gray via-white to-pioneer-light-blue/30">
       <Navbar />
-      
-      <main className="flex-grow py-16 px-4 md:px-8 lg:px-16">
+
+      <main className="flex-grow py-16 px-2 md:px-8 lg:px-0">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-pioneer-deep-blue mb-4">
+            <h1 className="text-5xl font-extrabold text-gradient-primary mb-3 drop-shadow-lg">
               Privacy Policy
             </h1>
-            <p className="text-xl text-gray-600">
+            <p className="text-lg text-gray-700">
               Last updated: {new Date().toLocaleDateString()}
             </p>
           </div>
 
           <div className="space-y-8">
-            <Card>
+            <Card className="card-gradient card-hover animate-fade-in">
               <CardHeader>
                 <CardTitle className="text-2xl text-pioneer-deep-blue">1. Information We Collect</CardTitle>
               </CardHeader>
@@ -40,7 +40,7 @@ const PrivacyPolicy: React.FC = () => {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="card-gradient card-hover animate-fade-in">
               <CardHeader>
                 <CardTitle className="text-2xl text-pioneer-deep-blue">2. How We Use Your Information</CardTitle>
               </CardHeader>
@@ -60,7 +60,7 @@ const PrivacyPolicy: React.FC = () => {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="card-gradient card-hover animate-fade-in">
               <CardHeader>
                 <CardTitle className="text-2xl text-pioneer-deep-blue">3. Information Sharing and Disclosure</CardTitle>
               </CardHeader>
@@ -78,7 +78,7 @@ const PrivacyPolicy: React.FC = () => {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="card-gradient card-hover animate-fade-in">
               <CardHeader>
                 <CardTitle className="text-2xl text-pioneer-deep-blue">4. Data Security</CardTitle>
               </CardHeader>
@@ -97,7 +97,7 @@ const PrivacyPolicy: React.FC = () => {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="card-gradient card-hover animate-fade-in">
               <CardHeader>
                 <CardTitle className="text-2xl text-pioneer-deep-blue">5. Student Educational Records</CardTitle>
               </CardHeader>
@@ -110,7 +110,7 @@ const PrivacyPolicy: React.FC = () => {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="card-gradient card-hover animate-fade-in">
               <CardHeader>
                 <CardTitle className="text-2xl text-pioneer-deep-blue">6. Cookies and Tracking Technologies</CardTitle>
               </CardHeader>
@@ -123,7 +123,7 @@ const PrivacyPolicy: React.FC = () => {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="card-gradient card-hover animate-fade-in">
               <CardHeader>
                 <CardTitle className="text-2xl text-pioneer-deep-blue">7. Your Rights and Choices</CardTitle>
               </CardHeader>
@@ -142,7 +142,7 @@ const PrivacyPolicy: React.FC = () => {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="card-gradient card-hover animate-fade-in">
               <CardHeader>
                 <CardTitle className="text-2xl text-pioneer-deep-blue">8. Data Retention</CardTitle>
               </CardHeader>
@@ -154,7 +154,7 @@ const PrivacyPolicy: React.FC = () => {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="card-gradient card-hover animate-fade-in">
               <CardHeader>
                 <CardTitle className="text-2xl text-pioneer-deep-blue">9. Children's Privacy</CardTitle>
               </CardHeader>
@@ -166,7 +166,7 @@ const PrivacyPolicy: React.FC = () => {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="card-gradient card-hover animate-fade-in">
               <CardHeader>
                 <CardTitle className="text-2xl text-pioneer-deep-blue">10. Changes to This Privacy Policy</CardTitle>
               </CardHeader>
@@ -178,7 +178,7 @@ const PrivacyPolicy: React.FC = () => {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="card-gradient card-hover animate-fade-in">
               <CardHeader>
                 <CardTitle className="text-2xl text-pioneer-deep-blue">11. Contact Us</CardTitle>
               </CardHeader>
@@ -199,7 +199,7 @@ const PrivacyPolicy: React.FC = () => {
           <div className="mt-12 text-center">
             <Link 
               to="/" 
-              className="inline-block bg-pioneer-deep-blue text-white px-8 py-3 rounded-lg hover:bg-pioneer-light-blue transition-colors"
+              className="btn-primary"
             >
               Back to Home
             </Link>
