@@ -9,10 +9,10 @@ const TermsOfService: React.FC = () => {
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-pioneer-gray via-white to-pioneer-light-blue/30">
       <Navbar />
 
-      <main className="flex-grow py-16 px-2 md:px-8 lg:px-0">
+      <main className="flex-grow py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-5xl font-extrabold text-gradient-primary mb-3 drop-shadow-lg">
+          <div className="text-center mb-16">
+            <h1 className="text-5xl md:text-6xl font-extrabold text-gradient-primary mb-4 drop-shadow-lg">
               Terms of Service
             </h1>
             <p className="text-lg text-gray-700">
@@ -21,11 +21,11 @@ const TermsOfService: React.FC = () => {
           </div>
 
           <div className="space-y-8">
-            <Card className="card-gradient card-hover animate-fade-in">
+            <Card className="card-gradient card-hover animate-fade-in shadow-md">
               <CardHeader>
-                <CardTitle className="text-2xl text-pioneer-deep-blue">1. Acceptance of Terms</CardTitle>
+                <CardTitle className="text-2xl font-bold text-pioneer-deep-blue">1. Acceptance of Terms</CardTitle>
               </CardHeader>
-              <CardContent className="prose max-w-none">
+              <CardContent className="prose max-w-none text-gray-700 leading-relaxed">
                 <p>
                   By accessing and using PioneerLearn's educational platform, you accept and agree to be bound by the terms and provision of this agreement. 
                   If you do not agree to abide by the above, please do not use this service.
@@ -33,15 +33,15 @@ const TermsOfService: React.FC = () => {
               </CardContent>
             </Card>
 
-            <Card className="card-gradient card-hover animate-fade-in">
+            <Card className="card-gradient card-hover animate-fade-in shadow-md">
               <CardHeader>
-                <CardTitle className="text-2xl text-pioneer-deep-blue">2. Educational Services</CardTitle>
+                <CardTitle className="text-2xl font-bold text-pioneer-deep-blue">2. Educational Services</CardTitle>
               </CardHeader>
-              <CardContent className="prose max-w-none">
+              <CardContent className="prose max-w-none text-gray-700 leading-relaxed">
                 <p>
                   PioneerLearn provides online educational services including but not limited to:
                 </p>
-                <ul className="list-disc pl-6 mt-2">
+                <ul className="list-disc pl-6 mt-4 space-y-2">
                   <li>Interactive learning modules and courses</li>
                   <li>Educational content in various subjects</li>
                   <li>Progress tracking and assessment tools</li>
@@ -51,15 +51,15 @@ const TermsOfService: React.FC = () => {
               </CardContent>
             </Card>
 
-            <Card className="card-gradient card-hover animate-fade-in">
+            <Card className="card-gradient card-hover animate-fade-in shadow-md">
               <CardHeader>
-                <CardTitle className="text-2xl text-pioneer-deep-blue">3. User Accounts and Registration</CardTitle>
+                <CardTitle className="text-2xl font-bold text-pioneer-deep-blue">3. User Accounts and Registration</CardTitle>
               </CardHeader>
-              <CardContent className="prose max-w-none">
+              <CardContent className="prose max-w-none text-gray-700 leading-relaxed">
                 <p>
                   To access certain features of our platform, you must register for an account. You agree to:
                 </p>
-                <ul className="list-disc pl-6 mt-2">
+                <ul className="list-disc pl-6 mt-4 space-y-2">
                   <li>Provide accurate, current, and complete information during registration</li>
                   <li>Maintain and promptly update your account information</li>
                   <li>Maintain the security of your password and account</li>
@@ -69,15 +69,15 @@ const TermsOfService: React.FC = () => {
               </CardContent>
             </Card>
 
-            <Card className="card-gradient card-hover animate-fade-in">
+            <Card className="card-gradient card-hover animate-fade-in shadow-md">
               <CardHeader>
-                <CardTitle className="text-2xl text-pioneer-deep-blue">4. Student Conduct and Academic Integrity</CardTitle>
+                <CardTitle className="text-2xl font-bold text-pioneer-deep-blue">4. Student Conduct and Academic Integrity</CardTitle>
               </CardHeader>
-              <CardContent className="prose max-w-none">
+              <CardContent className="prose max-w-none text-gray-700 leading-relaxed">
                 <p>
                   Students using our platform agree to:
                 </p>
-                <ul className="list-disc pl-6 mt-2">
+                <ul className="list-disc pl-6 mt-4 space-y-2">
                   <li>Maintain academic honesty and integrity in all coursework</li>
                   <li>Not engage in cheating, plagiarism, or unauthorized collaboration</li>
                   <li>Respect intellectual property rights of course materials</li>
@@ -88,11 +88,11 @@ const TermsOfService: React.FC = () => {
               </CardContent>
             </Card>
 
-            <Card className="card-gradient card-hover animate-fade-in">
+            <Card className="card-gradient card-hover animate-fade-in shadow-md">
               <CardHeader>
-                <CardTitle className="text-2xl text-pioneer-deep-blue">5. Intellectual Property Rights</CardTitle>
+                <CardTitle className="text-2xl font-bold text-pioneer-deep-blue">5. Intellectual Property Rights</CardTitle>
               </CardHeader>
-              <CardContent className="prose max-w-none">
+              <CardContent className="prose max-w-none text-gray-700 leading-relaxed">
                 <p>
                   All content on PioneerLearn, including but not limited to text, graphics, logos, images, audio clips, 
                   digital downloads, and software, is the property of PioneerLearn or its content suppliers and is 
@@ -101,11 +101,11 @@ const TermsOfService: React.FC = () => {
               </CardContent>
             </Card>
 
-            <Card className="card-gradient card-hover animate-fade-in">
+            <Card className="card-gradient card-hover animate-fade-in shadow-md">
               <CardHeader>
-                <CardTitle className="text-2xl text-pioneer-deep-blue">6. Payment and Refund Policy</CardTitle>
+                <CardTitle className="text-2xl font-bold text-pioneer-deep-blue">6. Payment and Refund Policy</CardTitle>
               </CardHeader>
-              <CardContent className="prose max-w-none">
+              <CardContent className="prose max-w-none text-gray-700 leading-relaxed">
                 <p>
                   Course fees and payment terms are clearly stated during enrollment. Refund policies vary by course type and duration. 
                   Please contact our administration for specific refund requests, which will be evaluated on a case-by-case basis.
@@ -113,11 +113,11 @@ const TermsOfService: React.FC = () => {
               </CardContent>
             </Card>
 
-            <Card className="card-gradient card-hover animate-fade-in">
+            <Card className="card-gradient card-hover animate-fade-in shadow-md">
               <CardHeader>
-                <CardTitle className="text-2xl text-pioneer-deep-blue">7. Privacy and Data Protection</CardTitle>
+                <CardTitle className="text-2xl font-bold text-pioneer-deep-blue">7. Privacy and Data Protection</CardTitle>
               </CardHeader>
-              <CardContent className="prose max-w-none">
+              <CardContent className="prose max-w-none text-gray-700 leading-relaxed">
                 <p>
                   Your privacy is important to us. Please review our Privacy Policy, which also governs your use of the platform, 
                   to understand our practices regarding the collection and use of your personal information.
@@ -125,11 +125,11 @@ const TermsOfService: React.FC = () => {
               </CardContent>
             </Card>
 
-            <Card className="card-gradient card-hover animate-fade-in">
+            <Card className="card-gradient card-hover animate-fade-in shadow-md">
               <CardHeader>
-                <CardTitle className="text-2xl text-pioneer-deep-blue">8. Limitation of Liability</CardTitle>
+                <CardTitle className="text-2xl font-bold text-pioneer-deep-blue">8. Limitation of Liability</CardTitle>
               </CardHeader>
-              <CardContent className="prose max-w-none">
+              <CardContent className="prose max-w-none text-gray-700 leading-relaxed">
                 <p>
                   PioneerLearn shall not be liable for any direct, indirect, incidental, special, or consequential damages 
                   resulting from the use or inability to use our educational services, even if we have been advised of the 
@@ -138,11 +138,11 @@ const TermsOfService: React.FC = () => {
               </CardContent>
             </Card>
 
-            <Card className="card-gradient card-hover animate-fade-in">
+            <Card className="card-gradient card-hover animate-fade-in shadow-md">
               <CardHeader>
-                <CardTitle className="text-2xl text-pioneer-deep-blue">9. Termination</CardTitle>
+                <CardTitle className="text-2xl font-bold text-pioneer-deep-blue">9. Termination</CardTitle>
               </CardHeader>
-              <CardContent className="prose max-w-none">
+              <CardContent className="prose max-w-none text-gray-700 leading-relaxed">
                 <p>
                   We reserve the right to terminate or suspend your account and access to our services at our sole discretion, 
                   without notice, for conduct that we believe violates these Terms of Service or is harmful to other users, 
@@ -151,11 +151,11 @@ const TermsOfService: React.FC = () => {
               </CardContent>
             </Card>
 
-            <Card className="card-gradient card-hover animate-fade-in">
+            <Card className="card-gradient card-hover animate-fade-in shadow-md">
               <CardHeader>
-                <CardTitle className="text-2xl text-pioneer-deep-blue">10. Contact Information</CardTitle>
+                <CardTitle className="text-2xl font-bold text-pioneer-deep-blue">10. Contact Information</CardTitle>
               </CardHeader>
-              <CardContent className="prose max-w-none">
+              <CardContent className="prose max-w-none text-gray-700 leading-relaxed">
                 <p>
                   If you have any questions about these Terms of Service, please contact us at:
                 </p>
