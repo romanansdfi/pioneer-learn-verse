@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Trophy, Star, Award, ArrowLeft, Users, GraduationCap, Medal, BookOpen, Target, Brain } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -58,7 +57,7 @@ const allStudents: Student[] = [
     description: "Entrance topper at Mahindra Morang College (Bachelor level) with outstanding performance in academics, sports, and cultural activities achieving 95.5% marks. Excelled in computer science and mathematics with exceptional analytical skills.",
     score: "95.5%",
     rank: "1st",
-    subjects: ["Computer Science", "Mathematics", "Science", "English"],
+    subjects: ["Computer Science", "Mathematics", "English"],
     image: "/lovable-uploads/89faa761-6496-4316-8404-8b36f80602e5.png",
     badge: "Entrance Topper",
     icon: <Star className="w-6 h-6" />,
