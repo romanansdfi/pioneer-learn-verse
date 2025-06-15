@@ -15,6 +15,8 @@ import SchoolInfo from "./pages/SchoolInfo";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Achievers from "./pages/Achievers";
+import TermsOfService from "./pages/TermsOfService";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +32,8 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/achievers" element={<Achievers />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/dashboard" element={
               <ProtectedRoute>
                 <Dashboard />

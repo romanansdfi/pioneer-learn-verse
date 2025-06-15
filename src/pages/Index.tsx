@@ -194,14 +194,14 @@ const Index: React.FC = () => {
                 © {new Date().getFullYear()} PioneerLearn. All rights reserved.
               </p>
               <div className="flex space-x-8 mt-4 md:mt-0">
-                <a href="#" className="text-gray-400 hover:text-pioneer-light-blue text-sm transition-all duration-300 hover:scale-105 relative group">
+                <Link to="/terms-of-service" className="text-gray-400 hover:text-pioneer-light-blue text-sm transition-all duration-300 hover:scale-105 relative group">
                   Terms of Service
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-pioneer-light-blue transition-all duration-300 group-hover:w-full"></span>
-                </a>
-                <a href="#" className="text-gray-400 hover:text-pioneer-light-blue text-sm transition-all duration-300 hover:scale-105 relative group">
+                </Link>
+                <Link to="/privacy-policy" className="text-gray-400 hover:text-pioneer-light-blue text-sm transition-all duration-300 hover:scale-105 relative group">
                   Privacy Policy
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-pioneer-light-blue transition-all duration-300 group-hover:w-full"></span>
-                </a>
+                </Link>
                 <a href="#" className="text-gray-400 hover:text-pioneer-light-blue text-sm transition-all duration-300 hover:scale-105 relative group">
                   Accessibility
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-pioneer-light-blue transition-all duration-300 group-hover:w-full"></span>
